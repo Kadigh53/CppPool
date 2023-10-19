@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:22:27 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/10/17 20:54:23 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/10/19 18:55:13 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,24 @@ public :
 class	PhoneBook {
 private :
 	Contact	contacts[8];
-	void	print_contact_attr(Contact contct, size_t n)
+
+	void	display_contacts(Contact contct, int index)
 	{
-		int i = 0;
-		while (i < n)
-		{
-			std::cout << std::right << std::setw(10) << contct.first_name.substr(i * 10, 10);
-			std::cout << std::right << std::setw(10) << "|" << contct.last_name.substr(i * 10, 10);
-			std::cout << std::right << std::setw(10) << "|" << contct.nickname.substr(i * 10, 10) << "|";
-			std::cout << std::endl << "          ";
-			i++;
-		}
+			std::cout << std::setw(10) << index << "         |";
+			std::cout << std::setw(10) << (contct.first_name.length() > 10 ? contct.first_name.substr(0, 9) + "." : contct.first_name) << "|";
+			std::cout << std::setw(10) << (contct.last_name.length() > 10 ? contct.last_name.substr(0, 9) + "." : contct.last_name) << "|";
+			std::cout << std::setw(10) << (contct.nickname.length() > 10 ? contct.nickname.substr(0, 9) + "." : contct.nickname);
+			std::cout << std::endl;
+	}	
+	void	display_uno_contact(int index)
+	{
+		std::cout << "first name : " << contacts[index].first_name << std::endl;
+		std::cout << "last name  : " << contacts[index].last_name << std::endl;
+		std::cout << "nickname   : " << contacts[index].nickname << std::endl;
+		std::cout << "phone numbre  : " << contacts[index].phonenumber << std::endl;
+		std::cout << "darkest secret : " << contacts[index].darkest_secret << std::endl;
 	}
+
 public :
 	void	ADD(int index)
 	{
@@ -55,14 +61,19 @@ public :
 		std::cout << "darkest secret : ";
 		std::cin >> contacts[index].darkest_secret;
 	}
-	void	SEARCH(int index)
+	void	SEARCH()
 	{
+		int index;
+		std::cout << "index     |frst name |last name |nickname  |" << std::endl;
 		std::cout << "---------- ---------- ---------- ---------- " << std::endl;
-		std::cout <<  index << "         |";
 
-		print_contact_attr(contacts[index],5);
-// 
-		std::cout << std::endl;
+		for (int i = 0; i < 8; i++)
+			display_contacts(contacts[i], i);
+
+		std::cout << "enter a contact index : ";
+		std::cin >> index;
+		display_uno_contact(index);
+
 	}
 	void	EXIT()
 	{
@@ -72,29 +83,32 @@ public :
 
 int	main()
 {
-	PhoneBook	PhoneBook;
-	std::string	cmd;
-	int			ncntct = 0;
-	int			index = 0;
+	PhoneBook		PhoneBook;
+	std::string		cmd;
+	int				ncntct = 0;
+	unsigned long	index = 0;
 
-	while (1)
+	std::cout << "pick a Command (ADD,SEARCH OR EXIT)."<<std::endl << "command : ";
+	std::cin >> cmd;
+	while (!std::cin.eof())
 	{
-		std::cout << "pick a Command : \"ADD\",\"SEARCH\" OR \"EXIT\"."<<std::endl << "command : ";
-		std::cin >> cmd;
 		if (cmd == "ADD")
 			PhoneBook.ADD(ncntct++);
 		else if (cmd == "SEARCH")
 		{
+			//if index < cntct%8 
 			std::cout << "choose an index : ";
 			std::cin >> index;
 			if (index >= 8)
 				std::cout << "invalid index. index(0-7)" << std::endl;
 			else
-				PhoneBook.SEARCH(index);
+				PhoneBook.SEARCH();
 		}
 		else if (cmd == "EXIT")
-			PhoneBook.EXIT();
+			return (0);
 		else
 			std::cout << "COMMAND NOT FOUND" << std::endl;
+		std::cout << "pick a Command (ADD,SEARCH OR EXIT)."<<std::endl << "command : ";
+		std::cin >> cmd;
 	}
 }
