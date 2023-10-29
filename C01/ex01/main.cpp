@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 06:19:05 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/10/28 10:42:53 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/10/28 09:57:02 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/10/28 11:41:16 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <iostream>
+#include <iostream>
 
 class Zombie 
 {
@@ -23,45 +23,42 @@ public:
 	~Zombie();
 };
 
+void	Zombie::announce( void )
+{
+	std::cout << name << " qalikom qwdtoha breeeeeeeeeeeeeeeeb..." << std::endl;
+}
+
+Zombie::Zombie( std::string zombie_name )
+{
+	name = zombie_name;
+}
 
 Zombie::Zombie( void )
 {
 	name = "bihi";
 }
 
-Zombie::Zombie( std::string zombie_name )
-{
-	// std::cout << "a zombie named " << zombie_name << " in construction\n..." << std::endl;
-	name = zombie_name;
-}
-
 Zombie::~Zombie( void )
 {
 }
 
-Zombie*	newZombie( std::string name )
+Zombie* zombieHorde( int N, std::string name )
 {
 	Zombie *z;
-	z = new Zombie(name);
+	z = new Zombie[N];
+	for (int i = 0; i < N; i++)
+		z[i] = Zombie(name);
 	return z;
 }
 
-void	Zombie::announce( void )
+int	main()
 {
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-void randomChump( std::string name )
-{
-	Zombie z1;
-	z1 = Zombie(name);
-	z1.announce();	
-}
-int main()
-{
-	Zombie *z0;
-	z0 = newZombie("eli");
-	z0->announce();
-	std::cout << std::endl;
-	randomChump("hmad");
-	delete z0;
+	Zombie *z;
+
+	z = zombieHorde(3, "hmad");
+	for (int i = 0;i < 4;i++)
+	{
+		z[i].announce();
+	}
+	delete[] z;
 }

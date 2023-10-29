@@ -6,13 +6,9 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 06:25:42 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/10/25 06:36:10 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/10/28 08:29:04 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie*	newZombie( std::string name )
-{
-
-}
