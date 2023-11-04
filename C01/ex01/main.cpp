@@ -6,13 +6,13 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 09:57:02 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/10/28 11:41:16 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/10/30 09:03:34 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-class Zombie 
+class Zombie
 {
 private :
 	std::string name;

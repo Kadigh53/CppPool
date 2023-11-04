@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 06:19:05 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/10/28 10:42:53 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/10/29 13:50:52 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,9 @@ void randomChump( std::string name )
 {
 	Zombie z1;
 	z1 = Zombie(name);
-	z1.announce();	
+	z1.announce();
 }
+
 int main()
 {
 	Zombie *z0;
