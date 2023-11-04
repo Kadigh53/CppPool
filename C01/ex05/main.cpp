@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 23:08:08 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/04 09:39:17 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/04 18:19:15 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,49 +25,69 @@ public :
 
 void	Harl::debug( void )
 {
-	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!";
+	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
 }
-
 void	Harl::info( void )
 {
-	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!";
+	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
 }
-
 void	Harl::warning( void )
 {
-	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month.";
+	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month." << std::endl;
 }
-
 void	Harl::error( void )
 {
-	std::cout << "This is unacceptable! I want to speak to the manager now.";
+	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
+typedef void(Harl::*MembersArray)();
 
 void	Harl::complain( std::string level )
 {
-	enum nlevels
-	{
-		DEBUG,
-		INFO,
-		WARNING,
-		ERROR,
+	int index = ((level == "DEBUG")*1
+				+ (level == "INFO")*2
+				+ (level == "WARNING")*3
+				+ (level == "ERROR")*4);
+	MembersArray Complainlvls[5] = {
+		NULL,
+		&Harl::debug,
+		&Harl::info,
+		&Harl::warning,
+		&Harl::error
 	};
-	nlevels lvl;
-	lvl = level;
-	// std::string levels[4];
 
-	switch (lvl)
+	// void (Harl::*fctPtr)() = &Harl::debug;
+	
+	/*
+	in c++ every member function is associated to an object
+	so if you declare a function pointer you must specify the object the member function it belongs to 
+	bcs every methode of the class apart of the user definition its defined as follow obj.methode(class const *this, ...)
+	this (holds the address of each object)
+	*/
+	// void (Harl::*fctPtr)();
+	// fctPtr = &Harl::debug;
+
+	switch (index)
 	{
-		case DEBUG:
-		{}
-		case INFO:
-		{}
-		case WARNING:
-		
-		case  ERROR:
+		case 1:
+		{
+			// fctPtr();
+			(this->*Complainlvls[index])();
+			break;
+		}
+		case 2:
+			(this->*Complainlvls[index])();
+		case 3:
+			(this->*Complainlvls[index])();
+		case 4:
+			(this->*Complainlvls[index])();
+		default: 
+			std::cout << "harl comlaining level is out of range" << std::endl;
 	}
 }
 
 int main()
 {
+	Harl hrl;
+	hrl.complain("INFO");
+	
 }

@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:45:57 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/02 16:02:12 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/04 13:42:20 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,11 @@ void	HumanB::attack()
 	std::cout << _name << " has no weapons to attack" << std::endl;
 }
 
+void func()
+{
+	int a;
+}
+
 int main()
 {
 	{
@@ -97,6 +102,8 @@ int main()
 		Hmad.attack();
 		club.setType("zizwara");
 		Hmad.attack();
+		// void (*f)() = func;
+		// printf("%p\n",(void *)func );
 	}
 	// {
 	// 	Weapon club = Weapon("crude spiked club");
