@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 09:57:02 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/10/28 11:41:16 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/10/29 17:17:48 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
 	void	announce( void );
 	~Zombie();
 };
-
+ 
 void	Zombie::announce( void )
 {
 	std::cout << name << " qalikom qwdtoha breeeeeeeeeeeeeeeeb..." << std::endl;
