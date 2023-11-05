@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 23:08:08 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/04 18:19:15 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/05 11:48:29 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ void	Harl::error( void )
 {
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
-typedef void(Harl::*MembersArray)();
+
+typedef void(Harl::*complainlvl)();
 
 void	Harl::complain( std::string level )
 {
@@ -47,7 +48,8 @@ void	Harl::complain( std::string level )
 				+ (level == "INFO")*2
 				+ (level == "WARNING")*3
 				+ (level == "ERROR")*4);
-	MembersArray Complainlvls[5] = {
+
+	complainlvl Complainlvls[5] = {
 		NULL,
 		&Harl::debug,
 		&Harl::info,
@@ -56,7 +58,7 @@ void	Harl::complain( std::string level )
 	};
 
 	// void (Harl::*fctPtr)() = &Harl::debug;
-	
+
 	/*
 	in c++ every member function is associated to an object
 	so if you declare a function pointer you must specify the object the member function it belongs to 
@@ -75,13 +77,25 @@ void	Harl::complain( std::string level )
 			break;
 		}
 		case 2:
+		{
 			(this->*Complainlvls[index])();
+			break;
+		}
 		case 3:
+		{
 			(this->*Complainlvls[index])();
+			break;
+		}
 		case 4:
+		{
 			(this->*Complainlvls[index])();
-		default: 
+			break;
+		}
+		default:
+		{
 			std::cout << "harl comlaining level is out of range" << std::endl;
+			break;
+		} 
 	}
 }
 
