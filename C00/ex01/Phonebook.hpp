@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:29:31 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/10/23 23:14:05 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/09 13:01:29 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ private :
 
 public :
 	void	ADD(int index);
-
 	void	SEARCH();
 };
 

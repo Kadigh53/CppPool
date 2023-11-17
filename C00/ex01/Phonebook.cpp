@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:22:27 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/10/22 21:05:22 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/09 15:28:58 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main()
 {
 	PhoneBook		PhoneBook;
 	std::string		cmd;
-	int				ncntct = 0;
+	unsigned long	ncntct = 0;
 	unsigned long	index = 0;
 
 	std::cout << "pick a Command (ADD,SEARCH OR EXIT)."<<std::endl << "command : ";
