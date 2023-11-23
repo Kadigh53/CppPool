@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 01:43:11 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/21 03:43:20 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/23 12:55:11 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ private :
 	const static int Fraction_Bits = 8;
 public :
 	Fixed();									//default constructor
-	Fixed(const Fixed &other);			//copy constructor
-	Fixed& operator=(const Fixed &other); // copy assignement operator
+	Fixed(const Fixed &other);					//copy constructor
+	Fixed& operator=(const Fixed &other); 		// copy assignement operator
 	~Fixed();									// deconstructor
 
 	int getRawBits( void ) const;

@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 23:08:08 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/05 11:48:29 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/23 12:58:05 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ void	Harl::complain( std::string level )
 	{
 		case 1:
 		{
-			// fctPtr();
 			(this->*Complainlvls[index])();
 			break;
 		}

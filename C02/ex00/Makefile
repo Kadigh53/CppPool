@@ -6,11 +6,9 @@
 #    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/12 16:10:02 by aaoutem-          #+#    #+#              #
-#    Updated: 2023/11/23 11:58:32 by aaoutem-         ###   ########.fr        #
+#    Updated: 2023/11/23 12:54:42 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-exec =: Fixed
 
 Compiler := c++ -std=c++98 -Wall -Wextra -Werror 
 
