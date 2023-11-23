@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:17:04 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/22 14:18:27 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/23 11:39:06 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ bool Fixed::operator!=( const Fixed &other )
 	return (this->nbr != other.nbr);
 }
 
-Fixed Fixed::operator+( const Fixed &other )
+Fixed Fixed::operator+( const Fixed &other ) const
 {
 	Fixed result;
 
@@ -75,14 +75,14 @@ Fixed Fixed::operator+( const Fixed &other )
 	return (result);
 }
 
-Fixed Fixed::operator-( const Fixed &other )
+Fixed Fixed::operator-( const Fixed &other ) const
 {
 	Fixed result;
 	result.nbr = this->nbr - other.nbr;
 	return (result);
 }
 
-Fixed Fixed::operator*( const Fixed &other )
+Fixed Fixed::operator*( const Fixed &other ) const
 {
 	float f;
 	Fixed result;
@@ -91,7 +91,7 @@ Fixed Fixed::operator*( const Fixed &other )
 	return (result);
 }
 
-Fixed Fixed::operator/( const Fixed &other )
+Fixed Fixed::operator/( const Fixed &other ) const
 {
 	Fixed result;
 	float f;

@@ -6,7 +6,7 @@
 #    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 14:18:39 by aaoutem-          #+#    #+#              #
-#    Updated: 2023/11/22 14:37:19 by aaoutem-         ###   ########.fr        #
+#    Updated: 2023/11/23 11:58:58 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,11 @@ Compile = c++ -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp Fixed.cpp
 
-all : $(SRC) Fixed.hpp
-	$(Compile) $(SRC) -o exec
+build : $(SRC) Fixed.hpp
+	$(Compile) $(SRC) -o Fixed
 
+rm :
+	rm Fixed
 # OBJ = $(SRC:.c=.o)
 
 # $(exec) : $(OBJ)

@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:39:10 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/22 14:46:38 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/23 11:38:37 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ public :
 	bool operator!=( const Fixed &other );
 
 	// arithmetic operators 
-	Fixed operator+( const Fixed &other );
-	Fixed operator-( const Fixed &other );
-	Fixed operator*( const Fixed &other );
-	Fixed operator/( const Fixed &other );
+	Fixed operator+( const Fixed &other ) const;
+	Fixed operator-( const Fixed &other ) const;
+	Fixed operator*( const Fixed &other ) const;
+	Fixed operator/( const Fixed &other ) const;
 
 	Fixed& operator++( void );
 	Fixed& operator--( void );
