@@ -6,13 +6,15 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 06:25:05 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/10/25 06:29:22 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/24 12:20:13 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void	randomChump( std::string name )
+
+void randomChump( std::string name )
 {
-	
+	Zombie z1(name);
+	z1.announce();
 }

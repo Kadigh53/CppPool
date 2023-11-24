@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:22:27 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/23 15:37:09 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/24 10:18:18 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ private :
 	void	remove_oldest_contact( void );
 
 public :
+
 	void	ADD(int *index);
 	void	SEARCH(int PBsize);
 };

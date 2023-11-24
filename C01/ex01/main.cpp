@@ -6,59 +6,18 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 10:38:06 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/04 10:38:09 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/24 13:41:18 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-
-class Zombie
-{
-private :
-	std::string name;
-public:
-	Zombie ();
-	Zombie ( std::string zombie_name );
-	void	announce( void );
-	~Zombie();
-};
- 
-void	Zombie::announce( void )
-{
-	std::cout << name << " qalikom qwdtoha breeeeeeeeeeeeeeeeb..." << std::endl;
-}
-
-Zombie::Zombie( std::string zombie_name )
-{
-	name = zombie_name;
-}
-
-Zombie::Zombie( void )
-{
-	name = "bihi";
-}
-
-Zombie::~Zombie( void )
-{
-}
-
-Zombie* zombieHorde( int N, std::string name )
-{
-	Zombie *z;
-	z = new Zombie[N];
-	for (int i = 0; i < N; i++)
-		z[i] = Zombie(name);
-	return z;
-}
+#include "Zombie.hpp" 
 
 int	main()
 {
-	Zombie *z;
+	Zombie *z = zombieHorde(3, "hmad");
 
-	z = zombieHorde(3, "hmad");
-	for (int i = 0;i < 4;i++)
-	{
+	for (int i = 0;i < 3;i++)
 		z[i].announce();
-	}
+
 	delete[] z;
 }

@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 06:20:37 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/10/28 08:29:08 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/24 12:06:46 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,18 @@
 
 # include <iostream>
 
-class Zombie 
+class Zombie
 {
 private :
 	std::string name;
 public:
-	Zombie( std::string zombie_name );
+	Zombie ();
+	Zombie ( std::string zombie_name );
 	void	announce( void );
 	~Zombie();
 };
 
-
+Zombie*	newZombie( std::string name );
+void	randomChump( std::string name );
 
 #endif

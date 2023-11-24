@@ -6,20 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 11:50:54 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/05 11:57:55 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/24 13:09:19 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-
-class Harl {
-private :
-
-public :
-
-}
-
-int main(int ac, char **av)
-{
-	
-}

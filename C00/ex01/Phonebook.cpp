@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:20:28 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/23 15:28:35 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/24 15:01:24 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,14 @@
 
 void	PhoneBook::display_contacts(Contact contact, int index)
 {
+	std::string f_name = (contact.first_name.length() > 10 ? contact.first_name.substr(0, 9) + "." : contact.first_name);
+	std::string l_name = (contact.last_name.length() > 10 ? contact.last_name.substr(0, 9) + "." : contact.last_name);
+	std::string nickname = (contact.nickname.length() > 10 ? contact.nickname.substr(0, 9) + "." : contact.nickname);
+
 	std::cout << std::right << std::setw(10) << index << "|";
-	std::cout << std::right << std::setw(10) << (contact.first_name.length() > 10 ? contact.first_name.substr(0, 9) + "." : contact.first_name) << "|";
-	std::cout << std::right << std::setw(10) << (contact.last_name.length() > 10 ? contact.last_name.substr(0, 9) + "." : contact.last_name) << "|";
-	std::cout << std::right << std::setw(10) << (contact.nickname.length() > 10 ? contact.nickname.substr(0, 9) + "." : contact.nickname) << "|";
+	std::cout << std::right << std::setw(10) << f_name << "|";
+	std::cout << std::right << std::setw(10) << l_name << "|";
+	std::cout << std::right << std::setw(10) << nickname << "|";
 	std::cout << std::right << std::endl;
 }
 
@@ -39,7 +43,6 @@ void	PhoneBook::remove_oldest_contact()
 void	PhoneBook::ADD(int *index)
 {	
 	int i = *index;
-	std::cout << i<<std::endl;
 	if (i > 7)
 	{
 		remove_oldest_contact();
@@ -61,7 +64,8 @@ void	PhoneBook::ADD(int *index)
 
 void	PhoneBook::SEARCH(int PBsize)
 {
-	int index;
+	int			index;
+	std::string	value;
 
 	std::cout << "index     |first name|last name | nickname |" << std::endl;
 	std::cout << "---------- ---------- ---------- ---------- " << std::endl;
@@ -69,16 +73,18 @@ void	PhoneBook::SEARCH(int PBsize)
 	for (int i = 0; i < 8; i++)
 		display_contacts(contacts[i], i);
 	std::cout << "enter a contact index : ";
+	getline(std::cin,value);
+	index = atoi(value.c_str());
+	std::cout << index;
+	return ;
 	if (!(std::cin >> index))
 	{
 		std::cout << "invalid input, enter a valid integer." << std::endl;
 		return;
 	}
-	if (std::cin.eof())
-		return ;
-	if (index >= PBsize)
+	if (index >= PBsize || (index < 0))
 	{
-		std::cout << "this contact doesn't existe, fill ur PhoneBook" << std::endl;
+		std::cout << "this contact doesn't existe" << std::endl;
 		return ;
 	}
 	display_uno_contact(index);

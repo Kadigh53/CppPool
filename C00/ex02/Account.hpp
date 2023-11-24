@@ -22,17 +22,17 @@ public:
 
 	typedef Account		t;
 
-	static int	getNbAccounts( void );		// done
-	static int	getTotalAmount( void );		// done
-	static int	getNbDeposits( void );		// done
-	static int	getNbWithdrawals( void );	// done
+	static int	getNbAccounts( void );
+	static int	getTotalAmount( void );
+	static int	getNbDeposits( void );
+	static int	getNbWithdrawals( void );
 	static void	displayAccountsInfos( void );
 
 	Account( int initial_deposit );
 	~Account( void );
 
-	void	makeDeposit( int deposit ); 		//done
-	bool	makeWithdrawal( int withdrawal );	//done
+	void	makeDeposit( int deposit );
+	bool	makeWithdrawal( int withdrawal );
 	int		checkAmount( void ) const;
 	void	displayStatus( void ) const;
 

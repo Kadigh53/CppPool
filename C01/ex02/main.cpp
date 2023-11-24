@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:26:03 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/10/31 11:40:09 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/24 13:42:34 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-	std::string str = "HI THIS IS BRAIN";
+	std::string str("HI THIS IS BRAIN");
 	std::string *stringPTR;
 	stringPTR = &str;
 	std::string &stringREF = str;
