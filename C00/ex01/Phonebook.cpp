@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:20:28 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/24 15:01:24 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/25 09:07:30 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,3 +89,24 @@ void	PhoneBook::SEARCH(int PBsize)
 	}
 	display_uno_contact(index);
 }
+
+void 		Contact::set_f_name(std::string f_name)
+{}
+std::string Contact::get_f_name()
+{}
+void 		Contact::set_l_name(std::string l_name)
+{}
+std::string Contact::get_l_name()
+{}
+void 		Contact::set_nickname(std::string nickname)
+{}
+std::string Contact::get_nickname()
+{}
+void 		Contact::set_phonenumber(std::string phonenumber)
+{}
+std::string Contact::get_phonenumber()
+{}
+void 		Contact::set_darkest_secret(std::string dark_s)
+{}
+std::string Contact::get_darkest_secret()
+{}
