@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 09:10:51 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/26 21:04:32 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/27 09:01:05 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ClapTrap::ClapTrap( void )
 	, EnergyPoints(10)
 	, AttackDamage(0)
 {
-	std::cout << "ClapTrap " << name << "birth..." << std::endl;
+	std::cout << "ClapTrap " << name << " Default constructor called." << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name_)
@@ -28,7 +28,7 @@ ClapTrap::ClapTrap(std::string name_)
 	, EnergyPoints(10)
 	, AttackDamage(0)
 {
-	std::cout << "ClapTrap " << name << " birth..." << std::endl;
+	std::cout << "ClapTrap " << name << " constructor called.." << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap& other )
@@ -40,7 +40,7 @@ ClapTrap::ClapTrap( const ClapTrap& other )
 		this->EnergyPoints = other.EnergyPoints;
 		this->AttackDamage = other.AttackDamage;
 	}
-	std::cout << "Another ClapTrap " << name << " birth..." << std::endl;
+	std::cout << "Another ClapTrap " << name << " Copy constructor called." << std::endl;
 }
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
@@ -50,6 +50,8 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
         this->HitPoints = other.HitPoints;
         this->EnergyPoints = other.EnergyPoints;
         this->AttackDamage = other.AttackDamage;
+		std::cout << "ClapTrap " << other.name 
+				<< " is being assigned to another ClapTrap" << std::endl;
     }
     return *this;
 }

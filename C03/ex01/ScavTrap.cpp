@@ -6,55 +6,59 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 09:10:11 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/26 20:57:58 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/27 09:15:34 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
+
 ScavTrap::ScavTrap( void ) : ClapTrap()
 {
-	std::cout << "ScavTrap " << name << "birth..." << std::endl;
+	this->HitPoints = 100;
+	this->EnergyPoints = 50;
+	this->AttackDamage = 20;
+	std::cout << "ScavTrap " << name << " Constructor called." << std::endl;
 }
 ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
 {
-	std::cout << "ScavTrap " << name << "birth..." << std::endl;
+	this->HitPoints = 100;
+	this->EnergyPoints = 50;
+	this->AttackDamage = 20;
+	std::cout << "ScavTrap " << name << " Constructor called." << std::endl;
 }
-// ScavTrap::ScavTrap( const ScavTrap& other ) : ClapTrap(other.name)
+
 ScavTrap::ScavTrap( const ScavTrap& other )
-			: ClapTrap(other)
+			: ClapTrap(other.name)
 {
 	if (this != &other)
 	{
-		this->name = other.name;
 		this->HitPoints = other.HitPoints;
 		this->EnergyPoints = other.EnergyPoints;
 		this->AttackDamage = other.AttackDamage;
 	}
-	std::cout << "Another ScavTrap " << name << "birth..." << std::endl;
-
+	std::cout << "ScavTrap " << name << " Copy Constructor called." << std::endl;
 }
 ScavTrap& ScavTrap::operator=(const ScavTrap& other )
 {
 	if (this != &other)
 	{
-		this->name = other.name;
-		this->HitPoints = other.HitPoints;
-		this->EnergyPoints = other.EnergyPoints;
-		this->AttackDamage = other.AttackDamage;
+		ClapTrap::operator=(other);
+		std::cout << "ScavTrap" << other.name 
+				<< " is being assigned to another ScavTrap" << std::endl;
 	}
 	return (*this);
 }
 
 void ScavTrap::guardGate()
 {
-	if (HitPoints> 0)
+	if (HitPoints > 0)
 		std::cout << name << " in Gate Guarde mode " << std::endl;
 	else
-		std::cout << name << "could not Put the Guard " << std::endl;
+		std::cout << name << "isn't alive so couldn't Put the Guard " << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap " << name << "birth..." << std::endl;
+	std::cout << "ScavTrap " << name << " Destructor called." << std::endl;
 }
