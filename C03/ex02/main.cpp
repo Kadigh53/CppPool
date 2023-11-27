@@ -5,14 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 09:10:45 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/26 20:50:45 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/11/26 21:10:23 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/11/26 21:10:24 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-
-int main()
-{
-	ScavTrap t("hmad");
-}

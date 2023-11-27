@@ -1,18 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 09:10:45 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/26 20:50:45 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/11/26 09:10:34 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/11/26 11:04:28 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef SCSVTRAP_HPP
+#define SCAVTRAP_HPP
 
-int main()
+# include <iostream>
+# include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
-	ScavTrap t("hmad");
-}
+public :
+	ScavTrap();
+	ScavTrap( std::string name );
+	ScavTrap( const ScavTrap& other );
+	ScavTrap& operator=(const ScavTrap& other );
+	~ScavTrap();
+
+	void guardGate();
+};
+
+
+#endif
