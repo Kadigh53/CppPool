@@ -6,11 +6,11 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:24:43 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/24 15:12:33 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/27 18:20:18 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "Phonebook.hpp"
 
 int	main()
 {	
@@ -21,14 +21,12 @@ int	main()
 	while (1)
 	{
 		std::cout << "pick a Command (ADD,SEARCH OR EXIT)."<<std::endl << "command : ";
-		std::cin >> cmd;
-		// if (std::cin)
-		getline(std::cin, cmd);
-		if (cmd.empty())
+
+		if (!std::getline(std::cin, cmd))
 		{
-			// continue;
-			std::cout << "OLA" << std::endl;
-			break;
+			std::cin.clear();
+			clearerr(stdin);
+			std::cout << std::endl; 
 		}
 		else if (cmd == "ADD")
 		{

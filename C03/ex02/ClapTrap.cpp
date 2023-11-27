@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 09:10:51 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/27 09:01:05 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/27 14:21:13 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 
 ClapTrap::~ ClapTrap()
 {
-	std::cout << "ClapTrap " << name << " death..." << std::endl;
+	std::cout << "ClapTrap " << name << " destructor..." << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)

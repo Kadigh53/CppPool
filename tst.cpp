@@ -1,10 +1,10 @@
-
-
 #include <iostream>
-
-int main()
+std::string f()
 {
-    int a;
-    std::cin >> a;
-    std::cout << a ;
+	return (0);
+}
+int main() {
+  
+	std::string str = f();
+	std::cout << str;
 }

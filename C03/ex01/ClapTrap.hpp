@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 09:10:48 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/26 21:05:33 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/27 14:31:20 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,6 @@ public:
 	ClapTrap& operator=(const ClapTrap& other);
 	~ClapTrap();
 
-
-	std::string get_name( void );
-	void set_name(std::string name_);
-
-	void set_HitPoints(unsigned int HitPoints_);
-	void set_EnergyPoints(unsigned int EnergyPoints_);
-	void set_AttackDamage(unsigned int AttackDamage_);
-
-	unsigned int  get_HitPoints( void );
-	unsigned int  get_EnergyPoints( void );
-	unsigned int  get_AttackDamage( void );
-
-	
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
