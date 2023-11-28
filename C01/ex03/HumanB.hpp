@@ -6,12 +6,12 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:47:35 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/10/31 18:31:11 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/28 11:12:48 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HUMANB_HPP
-#define HUMAN_HPP
+#define HUMANB_HPP
 
 #include <iostream>
 #include "Weapon.hpp"
@@ -28,6 +28,5 @@ public :
 	void setWeapon(Weapon &HumanWpn);
 	void attack();
 };
-
 
 #endif

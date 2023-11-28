@@ -6,12 +6,12 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:44:53 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/10/31 18:24:28 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/28 11:10:56 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HUMANA_HPP
-#define HUMAN_HPP
+#define HUMANA_HPP
 
 #include <iostream>
 #include "Weapon.hpp"

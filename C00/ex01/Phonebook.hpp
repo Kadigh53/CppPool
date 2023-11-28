@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:22:27 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/27 18:24:56 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/28 08:04:11 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,15 @@ private:
 	std::string	darkest_secret;
 public :
 	void setFname(std::string f_name);
-	std::string getFname();
-
 	void setLname(std::string l_name);
-	std::string getLname();
-
 	void setNickname(std::string nickname);
-	std::string getNickname();
-
 	void setPhoneNbr(std::string phonenumber);
-	std::string getPhoneNbr();
-
 	void setDsecret(std::string dark_s);
+
+	std::string getFname();
+	std::string getLname();
+	std::string getNickname();
+	std::string getPhoneNbr();
 	std::string getDsecret();
 };
 

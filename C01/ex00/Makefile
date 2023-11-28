@@ -6,7 +6,7 @@
 #    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/24 11:56:44 by aaoutem-          #+#    #+#              #
-#    Updated: 2023/11/24 12:05:30 by aaoutem-         ###   ########.fr        #
+#    Updated: 2023/11/28 10:04:15 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,4 +18,4 @@ build : $(SRC) Zombie.hpp
 	$(Compile) $(SRC) -o Zombie
 
 clean : 
-	rm 
+	rm Zombie 

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:20:28 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/27 18:39:52 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/28 12:10:04 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 
 void displayCntctTable(std::string element)
 {
@@ -43,20 +43,6 @@ void	PhoneBook::remove_oldest_contact()
 {
 	for (int i = 0; i < 7; i++)
 		contacts[i] = contacts[i + 1];
-}
-
-std::string	getCntctData(std::string field)
-{
-	std::string str;
-
-	std::cout << field;
-	if (!std::getline(std::cin,str))
-	{
-		std::cin.clear();
-		clearerr(stdin);
-		std::cout << std::endl; 
-	}
-	return str;
 }
 
 void	PhoneBook::ADD(int *index)

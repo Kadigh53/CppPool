@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:26:03 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/24 13:42:34 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/28 10:19:40 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main()
 	stringPTR = &str;
 	std::string &stringREF = str;
 
-	std::cout << "vars memory address" << std::endl;
+	std::cout << "vars memory address" << std::endl << std::endl;
 	std::cout << &str << std::endl;
 	std::cout << stringPTR << std::endl;
 	std::cout << &stringREF << std::endl;

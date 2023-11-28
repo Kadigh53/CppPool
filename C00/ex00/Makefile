@@ -6,7 +6,7 @@
 #    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 17:33:20 by aaoutem-          #+#    #+#              #
-#    Updated: 2023/11/24 10:23:12 by aaoutem-         ###   ########.fr        #
+#    Updated: 2023/11/28 07:38:21 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,4 +16,4 @@ build : megaphone.cpp
 	$(compile) megaphone.cpp -o megaphone
 
 clean :
-	rm -rf megaphone
+	rm megaphone
