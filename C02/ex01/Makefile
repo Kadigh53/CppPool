@@ -6,7 +6,7 @@
 #    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 02:42:10 by aaoutem-          #+#    #+#              #
-#    Updated: 2023/11/23 11:57:46 by aaoutem-         ###   ########.fr        #
+#    Updated: 2023/11/30 10:46:19 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,5 +18,5 @@ SRC = Fixed.cpp main.cpp
 build : $(SRC) Fixed.hpp
 	$(Compile) $(SRC) -o Fixed
 
-rm :
+clean :
 	rm Fixed

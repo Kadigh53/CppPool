@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 23:08:08 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/29 09:18:09 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/11/30 14:16:04 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/11/30 15:28:49 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-int main()
+#include "Animal.hpp"
+
+class Cat : public Animal
 {
-	Harl hrl;
+public :
+	Cat();
+	Cat();
+	Cat(const Cat& other );
+	Cat& operator=( const Cat& other );
+	~Cat();
+};
 
-	hrl.complain("OLA");
-	hrl.complain("DEBUG");
-	hrl.complain("INFO");
-	hrl.complain("WARNING");
-	hrl.complain("ERROR");
-}
+
+#endif

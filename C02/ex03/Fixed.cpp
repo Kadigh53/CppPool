@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 09:59:06 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/23 11:40:03 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/30 09:24:08 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,14 @@ std::ostream& operator<<(std::ostream &out, const Fixed &fp)
 	return out;
 }
 
-Fixed::Fixed( void ) : nbr(0){}
+Fixed::Fixed( void ) : nbr(0)
+{}
 
-Fixed::Fixed( const int n ) : nbr(n << Fraction_Bits){}
+Fixed::Fixed( const int n ) : nbr(n << Fraction_Bits)
+{}
 
-Fixed::Fixed( const float f ) : nbr((int)roundf(f * (1 << Fraction_Bits))){}
+Fixed::Fixed( const float f ) : nbr((int)roundf(f * (1 << Fraction_Bits)))
+{}
 
 Fixed::Fixed( const Fixed& other )
 {
@@ -164,4 +167,3 @@ const Fixed& Fixed::max(const Fixed& fp1, const Fixed& fp2)
 {
 	return ((fp1.nbr > fp2.nbr) ? fp1 : fp2);
 }
-

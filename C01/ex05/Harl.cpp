@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:39:48 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/28 10:40:37 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/29 09:19:02 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,28 @@
 
 void	Harl::debug( void )
 {
-	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
+	std::cout << "I love having extra bacon for my 7XL-double-cheese-"
+		<<"triple-pickle-specialketchup burger. I really do!" << std::endl;
 }
 void	Harl::info( void )
 {
-	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
+	std::cout << "I cannot believe adding extra bacon costs more money. "
+			<< "You didn’t put enough bacon in my burger! If you did, "
+			<< "I wouldn’t be asking for more!" << std::endl;
 }
 void	Harl::warning( void )
 {
-	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month." << std::endl;
+	std::cout << "I think I deserve to have some extra bacon for free."
+			 << "I’ve been coming for years whereas you started"
+			 << "working here since last month." << std::endl;
 }
 void	Harl::error( void )
 {
-	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+	std::cout << "This is unacceptable! "
+		"I want to speak to the manager now." << std::endl;
 }
 
 typedef void(Harl::*complainlvl)();
-
 
 void	Harl::complain( std::string level )
 {
@@ -47,18 +52,6 @@ void	Harl::complain( std::string level )
 		&Harl::warning,
 		&Harl::error
 	};
-
-	// void (Harl::*fctPtr)() = &Harl::debug;
-
-	/*
-	in c++ every member function is associated to an object
-	so if you declare a function pointer you must specify the object the member function it belongs to 
-	bcs every methode of the class apart of the user definition its defined as follow obj.methode(class const *this, ...)
-	this (holds the address of each object)
-	*/
-	// void (Harl::*fctPtr)();
-	// fctPtr = &Harl::debug;
-
 	switch (index)
 	{
 		case 1:
@@ -83,7 +76,7 @@ void	Harl::complain( std::string level )
 		}
 		default:
 		{
-			std::cout << "harl comlaining level is out of range" << std::endl;
+			std::cout << "I ... Who AM I. Harl comlaining level is out of range" << std::endl;
 			break;
 		} 
 	}

@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:47:35 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/28 11:12:48 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/30 10:27:38 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ class HumanB
 {
 private :
 	std::string	_name;
-	//Use a pointer to Weapon when the Weapon object is not owned by the class that is using it.
-	// Use a pointer to Weapon when the Weapon object may be null.
 	Weapon		*_wpn; 
 public :
 	HumanB(std::string HumaneName);

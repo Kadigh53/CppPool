@@ -6,23 +6,24 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:17:04 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/23 11:39:06 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/30 15:24:03 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-std::ostream& operator<<(std::ostream &out, const Fixed &fp)
-{
-	out << fp.toFloat();
-	return out;
-}
+const int Fixed::Fraction_Bits = 8;
 
-Fixed::Fixed( void ) : nbr(0){}
+Fixed::Fixed( void ) : nbr(0)
+{}
 
-Fixed::Fixed( const int n ) : nbr(n << Fraction_Bits){}
+Fixed::Fixed( const int n ) 
+	: nbr(n << Fraction_Bits)
+{}
 
-Fixed::Fixed( const float f ) : nbr((int)roundf(f * (1 << Fraction_Bits))){}
+Fixed::Fixed( const float f )
+	: nbr((int)roundf(f * (1 << Fraction_Bits)))
+{}
 
 Fixed::Fixed( const Fixed& other )
 {
@@ -165,3 +166,9 @@ const Fixed& Fixed::max(const Fixed& fp1, const Fixed& fp2)
 	return ((fp1.nbr > fp2.nbr) ? fp1 : fp2);
 }
 
+std::ostream& operator<<(std::ostream &out, const Fixed &fp)
+{
+	std::cout << "from here" << std::endl;
+	out << fp.toFloat();
+	return out;
+}

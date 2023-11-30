@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:39:10 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/23 11:38:37 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/30 10:48:38 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ public :
 	float toFloat( void ) const;
 	int toInt( void ) const;
 
-	friend std::ostream& operator<<(std::ostream &out, const Fixed &fp);
 };
+
+std::ostream& operator<<(std::ostream &out, const Fixed &fp);
 
 #endif

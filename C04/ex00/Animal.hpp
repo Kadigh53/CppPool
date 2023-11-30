@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 23:08:08 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/29 09:18:09 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/11/30 14:14:20 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/11/30 14:28:01 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-int main()
+#include <iostream>
+
+class Animal
 {
-	Harl hrl;
+protected :
+	std::string type;
+public :
+	Animal();
+	Animal(std::string type_);
+	Animal( const Animal& other );
+	Animal& operator=( const Animal& other );
+	~Animal();
+};
 
-	hrl.complain("OLA");
-	hrl.complain("DEBUG");
-	hrl.complain("INFO");
-	hrl.complain("WARNING");
-	hrl.complain("ERROR");
-}
+
+#endif

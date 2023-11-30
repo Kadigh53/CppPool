@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 23:08:08 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/29 09:18:09 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/11/30 14:16:09 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/11/30 15:30:02 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef DOG_HPP
+# define DOG_HPP
 
-int main()
+#include "Animal.hpp"
+
+class Dog : public Animal
 {
-	Harl hrl;
+public :
+	Dog();
+	Dog();
+	Dog( const Dog& other );
+	~Dog();
+};
 
-	hrl.complain("OLA");
-	hrl.complain("DEBUG");
-	hrl.complain("INFO");
-	hrl.complain("WARNING");
-	hrl.complain("ERROR");
-}
+
+#endif

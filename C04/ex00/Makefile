@@ -5,17 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/12 16:10:02 by aaoutem-          #+#    #+#              #
-#    Updated: 2023/11/30 10:44:02 by aaoutem-         ###   ########.fr        #
+#    Created: 2023/11/30 14:07:13 by aaoutem-          #+#    #+#              #
+#    Updated: 2023/11/30 14:09:34 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-Compiler := c++ -std=c++98 -Wall -Wextra -Werror 
+Compile = c++ -Wall -Wextra -Werror -std=c++98
 
-SRC := Fixed.cpp main.cpp
+SRC = main.cpp 
 
-build : $(SRC)
-	$(Compiler) $^ -o Fixed
-
+build : $(SRC) 
+	$(Compile) $(SRC)
+	
 clean : 
-	rm Fixed 

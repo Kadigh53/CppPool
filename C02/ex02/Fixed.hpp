@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:15:37 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/23 11:55:49 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/11/30 10:44:47 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Fixed
 {
 private :
 	int nbr;
-	const static int Fraction_Bits = 8;
+	const static int Fraction_Bits;
 public :
 	Fixed( void );
 	Fixed( const int n);
@@ -55,7 +55,8 @@ public :
 	float toFloat( void ) const;
 	int toInt( void ) const;
 
-	friend std::ostream& operator<<(std::ostream &out, const Fixed &fp);
 };
+
+std::ostream& operator<<(std::ostream &out, const Fixed &fp);
 
 #endif
