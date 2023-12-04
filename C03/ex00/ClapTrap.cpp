@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 09:22:54 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/26 13:41:05 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/01 21:20:13 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ ClapTrap& ClapTrap::operator=( const ClapTrap& other)
 	}
 	return *this;
 }
+
 ClapTrap::~ ClapTrap()
 {
 	std::cout << "ClapTrap " << name << " death..." << std::endl;
@@ -85,7 +86,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 			this->HitPoints = 0;
 		else
 			this->HitPoints = remainHitPoints;
-		std::cout << name << " under attack, " 
+		std::cout << name << " under attack, "
 					<< name << " loses " << amount << " HitPoints" << std::endl;
 	}
 	else

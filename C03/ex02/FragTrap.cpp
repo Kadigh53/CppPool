@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 21:10:18 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/27 09:23:27 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/01 21:27:16 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ FragTrap::FragTrap( void ) : ClapTrap()
 	AttackDamage = 30;
 	std::cout << "FragTrap " << name << " Constructor Called." << std::endl;
 }
+
 FragTrap::FragTrap(std::string name_) : ClapTrap(name_)
 {
 	HitPoints = 100;
@@ -26,6 +27,7 @@ FragTrap::FragTrap(std::string name_) : ClapTrap(name_)
 	AttackDamage = 30;
 	std::cout << "FragTrap " << name << " Constructor Called." << std::endl;
 }
+
 FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other.name)
 {
 	if (this != &other)
@@ -36,6 +38,7 @@ FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other.name)
 	}
 	std::cout << "FragTrap " << name << " Copy Constructor called." << std::endl;
 }
+
 FragTrap& FragTrap::operator=(const FragTrap& other)
 {
 	if (this != &other)

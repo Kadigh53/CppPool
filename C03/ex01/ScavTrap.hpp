@@ -6,12 +6,12 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 09:10:34 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/26 11:04:28 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/01 21:23:32 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCSVTRAP_HPP
-#define SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 # include <iostream>
 # include "ClapTrap.hpp"
@@ -27,6 +27,5 @@ public :
 
 	void guardGate();
 };
-
 
 #endif

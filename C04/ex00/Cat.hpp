@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:16:04 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/30 15:28:49 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/04 18:54:38 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,12 @@ class Cat : public Animal
 {
 public :
 	Cat();
-	Cat();
+	Cat( std::string type_ );
 	Cat(const Cat& other );
 	Cat& operator=( const Cat& other );
+	
+	void makeSound() const;
+
 	~Cat();
 };
 

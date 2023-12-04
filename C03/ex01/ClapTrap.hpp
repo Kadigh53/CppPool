@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 09:10:48 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/27 14:31:20 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/01 22:17:38 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ protected :
 	unsigned int	HitPoints;
 	unsigned int	EnergyPoints;
 	unsigned int	AttackDamage;
+
 public:
 	ClapTrap( void );
 	ClapTrap(std::string name);

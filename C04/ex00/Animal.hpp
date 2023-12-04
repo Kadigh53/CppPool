@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:14:20 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/30 14:28:01 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/04 18:53:54 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ public :
 	Animal(std::string type_);
 	Animal( const Animal& other );
 	Animal& operator=( const Animal& other );
+
+	void makeSound() const;
+
+	std::string getType() const;
+	void setType(std::string typeToSet);
 	~Animal();
 };
 
