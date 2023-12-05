@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/30 14:14:20 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/05 17:52:41 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/12/05 15:30:32 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/12/05 18:45:55 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
 
-#include <iostream>
+#ifndef DOG_HPP
+# define DOG_HPP
 
-class Animal
+#include "Animal.hpp"
+
+class Dog : public Animal
 {
-protected :
-	std::string type;
+private :
+	Brain *brain;
 public :
-	Animal();
-	Animal(std::string type_);
-	Animal( const Animal& other );
-	Animal& operator=( const Animal& other );
+	Dog();
+	Dog( const Dog& other );
+	Dog( std::string type_ );
+	Dog& operator=( const Dog& other );
 
-	virtual void makeSound() const;
-	// void makeSound() const;
-
-	std::string getType() const;
-	void setType(std::string typeToSet);
-	virtual ~Animal(); // but whyyy a virtual destructor 
+	void makeSound() const;
+	
+	~Dog();
 };
 
 

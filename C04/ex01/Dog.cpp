@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/30 14:16:09 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/05 09:54:24 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/12/05 15:30:20 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/12/05 15:32:52 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
 
-#include "Animal.hpp"
+#include "Dog.hpp"
 
-class Dog : public Animal
+Dog::Dog()
+	: Animal("Dog")
 {
-public :
-	Dog();
-	Dog( const Dog& other );
-	Dog( std::string type_ );
-	Dog& operator=( const Dog& other );
+}
+Dog::Dog( std::string type_ )
+	: Animal(type_)
+{
+}
+Dog::Dog( const Dog& other )
+	: Animal(other)
+{
+}
+void Dog::makeSound() const
+{
+	std::cout << type + " is Bracking...Haw. HawHaw "<< std::endl;
+}
 
-	void makeSound() const;
-	
-	~Dog();
-};
+Dog& Dog::operator=( const Dog& other )
+{
+	if (this != &other)
+		Animal::operator=(other);
+	return (*this);
+}
 
-
-#endif
+Dog::~Dog()
+{}
