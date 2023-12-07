@@ -6,11 +6,11 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 23:18:06 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/07 03:47:26 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/07 04:19:51 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp"
+#include "../include/Cure.hpp"
 
 Cure::Cure()
 	: AMateria("cure")

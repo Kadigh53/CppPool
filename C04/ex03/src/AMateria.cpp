@@ -6,11 +6,11 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 21:29:55 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/07 03:51:44 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/07 05:16:22 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "AMateria.hpp"
+# include "../include/AMateria.hpp"
 
 AMateria::AMateria()
 	: type_("")
@@ -53,4 +53,7 @@ std::string const & AMateria::getType() const
 }
 
 void AMateria::use(ICharacter& target)
-{}
+{
+	std::cout <<"this Character uses" << this->type_ 
+		<< ": on the amateria" << target.getName() << std::endl;
+}

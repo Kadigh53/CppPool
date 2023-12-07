@@ -6,11 +6,11 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 23:18:13 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/07 03:48:56 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/07 04:19:56 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "../include/Ice.hpp"
 
 Ice::Ice()
 	: AMateria("ice")

@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 00:00:30 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/07 03:57:53 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/07 05:31:24 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Character : public ICharacter
 private :
 	std::string	name;
 	AMateria*	inventory_[4];
+	AMateria*	tmp;
 public :
 	Character();
 	Character( std::string name_ );
