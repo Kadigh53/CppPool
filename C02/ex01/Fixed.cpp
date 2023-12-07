@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 02:42:02 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/30 10:44:18 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/01 11:18:19 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,18 @@
 
 const int Fixed::Fraction_Bits = 8;
 
-Fixed::Fixed( void ) : nbr(2688)
+Fixed::Fixed( void ) : nbr(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed( const int n ) : nbr(n << Fraction_Bits)
 {
-	// convert an int to a fixed point version 
 	std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed( const float f ) : nbr((int)roundf(f * (1 << Fraction_Bits)))
 {
-	// it converts the float to a fixedpoint version 
-	// nbr =  (int)round(f * (1 << Fraction_Bits));
 	std::cout << "Float constructor called" << std::endl;
 }
 
@@ -54,7 +51,7 @@ Fixed::~Fixed()
 
 float	Fixed::toFloat( void ) const
 {
-	// converts the fixed point to float
+	// converts fixed point to float
 	return ((float)nbr / (1 << Fraction_Bits));
 }
 

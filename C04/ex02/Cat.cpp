@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 06:43:10 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/01 12:52:06 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/12/06 02:16:29 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/12/06 02:16:31 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#include "Cat.hpp"
 
-int main()
+Cat::Cat()
+	: Animal("Cat")
+{}
+
+Cat::Cat(std::string type_)
+	: Animal(type_)
+{}
+
+Cat::Cat(const Cat& other )
+	: Animal(other)
+{}
+
+void Cat::makeSound() const
 {
-	Point a(0.0f, 0.0f);
-	Point b(2.0f, 0.0f);
-	Point c(0.0f, 2.0f);
-	Point point(0.5f, 0.5f);
-
-	bool result = bsp(a, b, c, point);
-	if (result)
-		std::cout << "point inside triangle" << std::endl;
-	else
-		std::cout << "point outside triangle" << std::endl;
+	std::cout << type + " is Meowing "<< std::endl;
 }
+
+Cat& Cat::operator=( const Cat& other )
+{
+	if (this != &other)
+		Animal::operator=(other);
+	return (*this);
+}
+
+Cat::~Cat(){}

@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:17:04 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/30 15:24:03 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/01 11:56:25 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ Fixed::Fixed( const int n )
 
 Fixed::Fixed( const float f )
 	: nbr((int)roundf(f * (1 << Fraction_Bits)))
-{}
+{
+	std::cout << nbr<< std::endl;
+}
 
 Fixed::Fixed( const Fixed& other )
 {
@@ -132,17 +134,16 @@ Fixed Fixed::operator--( int )
 	return tmp;
 }
 
-Fixed::~Fixed(){}
+Fixed::~Fixed()
+{}
 
 float	Fixed::toFloat( void ) const
 {
-	// converts the fixed point to float
 	return ((float)nbr / (1 << Fraction_Bits));
 }
 
 int		Fixed::toInt( void ) const
 {
-	// converts the fixed point to int
 	return (nbr / (1 << Fraction_Bits));
 }
 
@@ -168,7 +169,6 @@ const Fixed& Fixed::max(const Fixed& fp1, const Fixed& fp2)
 
 std::ostream& operator<<(std::ostream &out, const Fixed &fp)
 {
-	std::cout << "from here" << std::endl;
 	out << fp.toFloat();
 	return out;
 }

@@ -6,17 +6,13 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 09:59:06 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/30 09:24:08 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/01 13:43:14 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-std::ostream& operator<<(std::ostream &out, const Fixed &fp)
-{
-	out << fp.toFloat();
-	return out;
-}
+const int Fixed::Fraction_Bits = 8;
 
 Fixed::Fixed( void ) : nbr(0)
 {}
@@ -166,4 +162,10 @@ const Fixed& Fixed::min(const Fixed& fp1, const Fixed& fp2)
 const Fixed& Fixed::max(const Fixed& fp1, const Fixed& fp2)
 {
 	return ((fp1.nbr > fp2.nbr) ? fp1 : fp2);
+}
+
+std::ostream& operator<<(std::ostream &out, const Fixed &fp)
+{
+	out << fp.toFloat();
+	return out;
 }

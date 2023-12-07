@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 06:43:10 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/01 12:52:06 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/12/06 23:58:39 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/12/07 03:51:00 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#ifndef ICHARACTER_HPP
+#define ICHARACTER_HPP
 
-int main()
+#include "AMateria.hpp"
+
+class ICharacter
 {
-	Point a(0.0f, 0.0f);
-	Point b(2.0f, 0.0f);
-	Point c(0.0f, 2.0f);
-	Point point(0.5f, 0.5f);
+public:
+	virtual ~ICharacter() {}
+	virtual std::string const & getName() const = 0;
+	virtual void equip(AMateria* m) = 0;
+	virtual void unequip(int idx) = 0;
+	virtual void use(int idx, ICharacter& target) = 0;
+};
 
-	bool result = bsp(a, b, c, point);
-	if (result)
-		std::cout << "point inside triangle" << std::endl;
-	else
-		std::cout << "point outside triangle" << std::endl;
-}
+#endif

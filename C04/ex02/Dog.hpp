@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 06:43:10 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/01 12:52:06 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/11/30 14:16:09 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/12/05 09:54:24 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#ifndef DOG_HPP
+# define DOG_HPP
 
-int main()
+#include "Animal.hpp"
+
+class Dog : public Animal
 {
-	Point a(0.0f, 0.0f);
-	Point b(2.0f, 0.0f);
-	Point c(0.0f, 2.0f);
-	Point point(0.5f, 0.5f);
+public :
+	Dog();
+	Dog( const Dog& other );
+	Dog( std::string type_ );
+	Dog& operator=( const Dog& other );
 
-	bool result = bsp(a, b, c, point);
-	if (result)
-		std::cout << "point inside triangle" << std::endl;
-	else
-		std::cout << "point outside triangle" << std::endl;
-}
+	void makeSound() const;
+	
+	~Dog();
+};
+
+
+#endif

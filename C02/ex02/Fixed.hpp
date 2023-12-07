@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:15:37 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/30 10:44:47 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/01 11:30:29 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ public :
 	Fixed( const Fixed& other );
 	Fixed& operator=( const Fixed &other );
 
-	// comparaison operators
 	bool operator>( const Fixed &other );
 	bool operator>=( const Fixed &other );
 	bool operator<=( const Fixed &other );
@@ -35,7 +34,6 @@ public :
 	bool operator==( const Fixed &other );
 	bool operator!=( const Fixed &other );
 
-	// arithmetic operators 
 	Fixed operator+( const Fixed &other ) const;
 	Fixed operator-( const Fixed &other ) const;
 	Fixed operator*( const Fixed &other ) const;
@@ -50,6 +48,7 @@ public :
 	static Fixed& max(Fixed& f1,Fixed& f2);
 	const static Fixed& min(const Fixed& f1, const Fixed& f2);
 	const static Fixed& max(const Fixed& f1, const Fixed& f2);
+
 	~Fixed();
 
 	float toFloat( void ) const;

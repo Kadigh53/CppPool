@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:39:10 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/30 10:48:38 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/01 11:56:53 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Fixed
 {
 private :
 	int nbr;
-	const static int Fraction_Bits = 8;
+	const static int Fraction_Bits;
 public :
 	Fixed( void );
 	Fixed( const int n);

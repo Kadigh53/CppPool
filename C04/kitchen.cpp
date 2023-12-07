@@ -1,37 +1,37 @@
 #include <iostream>
-class Base
+
+class A
 {
 public:
-    ~Base() // note: not virtual
-    {
-        std::cout << "Calling ~Base()\n";
-    }
+	virtual void func (){ std::cout << " class A" << std::endl;}
 };
 
-class Derived: public Base
+class B : public A
 {
-private:
-    int* m_array {};
-
 public:
-    Derived(int length)
-      : m_array{ new int[length] }
-    {
-    }
-
-    ~Derived() // note: not virtual (your compiler may warn you about this)
-    {
-        std::cout << "Calling ~Derived()\n";
-        delete[] m_array;
-    }
+	void func (){ std::cout << " class B" << std::endl;}
 };
+
+// class C: public B
+// {
+// public:
+// 	void func33 (){ std::cout << " class C" << std::endl;}
+// };
+
+// class D: public C
+// {
+// public:
+// 	void func22 (){ std::cout << " class D" << std::endl;}
+// };
+
+
 
 int main()
 {
-    Derived* derived { new Derived(5) };
-    Base* base { derived };
+	B b;
+	A *a = &b;
 
-    delete base;
+	a->func();
 
-    return 0;
+	return 0;
 }

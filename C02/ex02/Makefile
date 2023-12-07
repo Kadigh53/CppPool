@@ -6,7 +6,7 @@
 #    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 14:18:39 by aaoutem-          #+#    #+#              #
-#    Updated: 2023/11/23 11:58:58 by aaoutem-         ###   ########.fr        #
+#    Updated: 2023/12/01 11:51:50 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,5 @@ SRC = main.cpp Fixed.cpp
 build : $(SRC) Fixed.hpp
 	$(Compile) $(SRC) -o Fixed
 
-rm :
+clean :
 	rm Fixed
-# OBJ = $(SRC:.c=.o)
-
-# $(exec) : $(OBJ)
-# 	$(Compile) $(OBJ) -o $@
-
-# %.o : %.c Fixed.hpp
-# 	$(Compile) $<

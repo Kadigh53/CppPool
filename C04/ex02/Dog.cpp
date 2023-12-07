@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 06:43:10 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/01 12:52:06 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/11/30 15:30:14 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/12/04 19:17:45 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#include "Dog.hpp"
 
-int main()
+Dog::Dog()
+	: Animal("Dog")
 {
-	Point a(0.0f, 0.0f);
-	Point b(2.0f, 0.0f);
-	Point c(0.0f, 2.0f);
-	Point point(0.5f, 0.5f);
-
-	bool result = bsp(a, b, c, point);
-	if (result)
-		std::cout << "point inside triangle" << std::endl;
-	else
-		std::cout << "point outside triangle" << std::endl;
 }
+Dog::Dog( std::string type_ )
+	: Animal(type_)
+{
+}
+Dog::Dog( const Dog& other )
+	: Animal(other)
+{
+}
+void Dog::makeSound() const
+{
+	std::cout << type + " is Bracking...Haw. HawHaw "<< std::endl;
+}
+
+Dog& Dog::operator=( const Dog& other )
+{
+	if (this != &other)
+		Animal::operator=(other);
+	return (*this);
+}
+
+Dog::~Dog()
+{}

@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 09:59:19 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/11/23 11:45:45 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/01 12:02:22 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ public :
 	Point ( void );
 	Point (float x_, float y_);
 	Point (const Point &other);
-
 	Point& operator=(const Point& other);
+
 
 	Point operator+(const Point& other) const;
 	Point operator-(const Point& other) const;
