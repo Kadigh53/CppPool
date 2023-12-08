@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 09:22:54 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/01 21:20:13 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/08 03:55:38 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ ClapTrap::ClapTrap( const ClapTrap& other )
 		this->EnergyPoints = other.EnergyPoints;
 		this->AttackDamage = other.AttackDamage;
 	}
-	std::cout << "Another ClapTrap " << name << " birth..." << std::endl;
+	std::cout << "ClapTrap " << name << " birth...(Copy)" << std::endl;
 }
 ClapTrap& ClapTrap::operator=( const ClapTrap& other)
 {
@@ -87,7 +87,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 		else
 			this->HitPoints = remainHitPoints;
 		std::cout << name << " under attack, "
-					<< name << " loses " << amount << " HitPoints" << std::endl;
+					<< name << " took " << amount << " Dammage points" << std::endl;
 	}
 	else
 		std::cout << "How could a dead ClapTrap take more Damage "

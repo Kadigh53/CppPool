@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 00:39:43 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/07 06:37:51 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/08 00:08:17 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,15 @@
 
 Character::Character()
 {
-	inventory_[0] = NULL;
-	inventory_[1] = NULL;
-	inventory_[2] = NULL;
-	inventory_[3] = NULL;
+	for (int i = 0; i < 4 ; i++)
+			inventory_[i] = NULL;
 	tmp = NULL;
 }
 Character::Character( std::string name_ )
 	: name(name_)
 {
-	inventory_[0] = NULL;
-	inventory_[1] = NULL;
-	inventory_[2] = NULL;
-	inventory_[3] = NULL;
+	for (int i = 0; i < 4 ; i++)
+			inventory_[i] = NULL;
 	tmp = NULL;
 }
 
@@ -50,12 +46,11 @@ Character& Character::operator=( const Character& other )
 			this->tmp = other.tmp->clone();
 		}
 		for (int i = 0; i < 4; i++)
-		{
 			if (this->inventory_[i])
 				delete inventory_[i];
-		}
 		for (int i = 0; i < 4; i++)
-			this->inventory_[i] = other.inventory_[i]->clone();
+			if (this->inventory_[i])
+				this->inventory_[i] = other.inventory_[i]->clone();
 	}
 	return (*this);
 }
@@ -64,6 +59,7 @@ std::string const & Character::getName() const
 {
 	return (this->name);
 }
+
 void Character::equip(AMateria* m)
 {
 	int i = -1;

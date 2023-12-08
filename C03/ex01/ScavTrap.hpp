@@ -6,11 +6,11 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 09:10:34 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/01 21:23:32 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/08 03:59:33 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCSVTRAP_HPP
+#ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
 # include <iostream>

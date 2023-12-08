@@ -6,11 +6,12 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 21:29:55 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/07 05:16:22 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/08 00:32:11 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../include/AMateria.hpp"
+#include "../include/Character.hpp"
 
 AMateria::AMateria()
 	: type_("")

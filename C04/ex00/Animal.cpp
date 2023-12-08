@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:28:54 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/05 14:43:59 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/08 03:29:02 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Animal& Animal::operator=( const Animal& other )
 
 void Animal::makeSound() const
 {
-	std::cout << "the " + type + " ???"<< std::endl;
+	std::cout << "the " + type + " sounds ???"<< std::endl;
 }
 
 std::string Animal::getType() const
