@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 15:29:47 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/05 15:31:47 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/09 02:46:58 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 #include "Animal.hpp"
 
 Animal::Animal()
-	: type("NonType ")
+	: type("Anonym")
 {
+	std::cout << type + " Constructor Called" << std::endl;
 }
 
 Animal::Animal(std::string type_) 
 	: type(type_)
-{}
+{
+	std::cout << type + " ParamConstructor Called" << std::endl;
+}
 
 Animal::Animal( const Animal& other )
 {
@@ -28,6 +31,7 @@ Animal::Animal( const Animal& other )
 	{
 		this->type = other.type;
 	}
+	std::cout << type + " CopyConstructor Called" << std::endl;
 }
 
 Animal& Animal::operator=( const Animal& other )

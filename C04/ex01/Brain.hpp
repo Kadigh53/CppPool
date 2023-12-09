@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 15:22:06 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/05 15:38:58 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/09 03:00:44 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ public :
 	Brain& operator=( const Brain& other );
 	~Brain();
 
-	void setIdea(std::string idea);
-	std::string getIdea();
+	void setIdea(int idx, std::string idea);
+	std::string getIdea(int idx);
 };
 
 #endif

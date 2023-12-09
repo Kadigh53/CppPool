@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 06:43:50 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/08 00:04:04 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/08 23:26:31 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ MateriaSource::MateriaSource( const MateriaSource& other )
 }
 
 MateriaSource::~MateriaSource()
-{}
+{
+	delete []learnedMaterias;
+}
 
 MateriaSource& MateriaSource::operator=( const MateriaSource& other )
 {

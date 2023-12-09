@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 15:30:32 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/05 18:45:55 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/09 03:44:28 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal
 {
@@ -28,6 +29,8 @@ public :
 
 	void makeSound() const;
 	
+	std::string getIdea(int idx);
+	void setIdea(int idx, std::string idea);
 	~Dog();
 };
 

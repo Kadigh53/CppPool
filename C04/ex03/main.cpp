@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 21:26:15 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/08 03:27:33 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/08 23:24:24 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ int main()
 	delete bob;
 	delete me;
 	delete src;
-	
+
 	return 0;
 }

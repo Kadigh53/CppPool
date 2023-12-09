@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 15:29:50 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/05 17:18:58 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/09 02:23:24 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ public :
 	Animal& operator=( const Animal& other );
 
 	virtual void makeSound() const;
-	// void makeSound() const;
 
 	std::string getType() const;
 	void setType(std::string typeToSet);
+
 	virtual ~Animal();
 };
 
