@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 15:30:50 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/11 18:09:48 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/12/06 23:58:39 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/12/11 05:59:00 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#ifndef ICHARACTER_HPP
+#define ICHARACTER_HPP
 
-int main ()
+# include <iostream>
+
+class AMateria;
+
+class ICharacter
 {
-	Animal *Cat0 =  new Cat();
-	Animal *Dog0 =  new Dog();
+public:
+	virtual ~ICharacter() {}
 
-	const Animal* zoo[2] = {Cat0, Dog0};
+	virtual std::string const & getName() const = 0;
 
-	for (int i = 0;i < 2; i++)
-	{
-		std::cout << std::endl;
-		std::cout << zoo[i]->getType() << std::endl;
-		zoo[i]->makeSound();
-	}
-	std::cout << std::endl;
+	virtual void equip(AMateria* m) = 0;
+	virtual void unequip(int idx) = 0;
+	virtual void use(int idx, ICharacter& target) = 0;
+};
 
-	for (int i = 0; i < 2; i++)
-		delete zoo[i];
-
-	return 0;
-}
+#endif

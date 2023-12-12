@@ -6,11 +6,11 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 06:43:50 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/08 23:26:31 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/10 00:36:15 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/MateriaSource.hpp"
+#include "MateriaSource.hpp"
 
 MateriaSource::MateriaSource()
 {
@@ -30,7 +30,8 @@ MateriaSource::MateriaSource( const MateriaSource& other )
 
 MateriaSource::~MateriaSource()
 {
-	delete []learnedMaterias;
+	for (int i = 0; i < 4; i++)
+		delete learnedMaterias[i];
 }
 
 MateriaSource& MateriaSource::operator=( const MateriaSource& other )
@@ -57,7 +58,7 @@ void MateriaSource::learnMateria(AMateria* m)
 	{
 		if (!learnedMaterias[i])
 		{
-			learnedMaterias[i] = m->clone();
+			learnedMaterias[i] = m;
 			break;
 		}
 	}

@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 15:30:50 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/11 18:09:48 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/12/11 14:51:20 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/12/11 16:16:24 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
+
 #include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 
-int main ()
+class WrongCat : public WrongAnimal
 {
-	Animal *Cat0 =  new Cat();
-	Animal *Dog0 =  new Dog();
+public :
+	WrongCat();
+	WrongCat( std::string type_ );
+	WrongCat(const WrongCat& other );
+	WrongCat& operator=( const WrongCat& other );
+	
+	void makeSound() const;
 
-	const Animal* zoo[2] = {Cat0, Dog0};
+	~WrongCat();
+};
 
-	for (int i = 0;i < 2; i++)
-	{
-		std::cout << std::endl;
-		std::cout << zoo[i]->getType() << std::endl;
-		zoo[i]->makeSound();
-	}
-	std::cout << std::endl;
-
-	for (int i = 0; i < 2; i++)
-		delete zoo[i];
-
-	return 0;
-}
+#endif

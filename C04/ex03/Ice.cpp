@@ -6,11 +6,11 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 23:18:13 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/08 00:53:36 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/10 00:36:10 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Ice.hpp"
+#include "Ice.hpp"
 
 Ice::Ice()
 	: AMateria("ice")
@@ -28,6 +28,7 @@ Ice& Ice::operator=( const Ice& other )
 }
 Ice::~Ice()
 {}
+
 AMateria* Ice::clone() const
 {
 	Ice *x = new Ice(*this);

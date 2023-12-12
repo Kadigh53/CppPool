@@ -5,17 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/12/06 20:56:52 by aaoutem-          #+#    #+#              #
-#    Updated: 2023/12/06 20:57:42 by aaoutem-         ###   ########.fr        #
+#    Created: 2023/12/05 15:31:00 by aaoutem-          #+#    #+#              #
+#    Updated: 2023/12/11 16:30:58 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-Compile = c++ -Wall -Wextra -Werror -std=c++98
+Compile = c++ -std=c++98 -Wall -Wextra -Werror
 
-SRC = Animal.cpp  Cat.cpp  Dog.cpp main.cpp
+HDR = Animal.hpp Brain.hpp Cat.hpp Dog.hpp\
+	WrongAnimal.hpp WrongCat.hpp
 
-build : $(SRC)  Animal.hpp  Cat.hpp  Dog.hpp 
-	$(Compile) $(SRC) 
-	
-# clean : 
-# 	rm zoo
+SRC = Animal.cpp  Brain.cpp  Cat.cpp  Dog.cpp  main.cpp\
+	WrongAnimal.cpp WrongCat.cpp
+
+build : $(SRC)
+	$(Compile) $(SRC) -o zoo
+
+clean : 
+	rm zoo

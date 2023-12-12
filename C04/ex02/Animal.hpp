@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 02:16:21 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/06 21:10:11 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/12/05 15:29:50 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/12/09 08:45:05 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,13 @@ public :
 	Animal( const Animal& other );
 	Animal& operator=( const Animal& other );
 
-	virtual void makeSound() const = 0;
+	virtual void makeSound() const = 0; 
 
 	std::string getType() const;
 	void setType(std::string typeToSet);
 
-	~Animal(); // but whyyy a virtual destructor 
+	virtual ~Animal();
 };
+
 
 #endif

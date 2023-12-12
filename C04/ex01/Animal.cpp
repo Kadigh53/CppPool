@@ -6,23 +6,22 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 15:29:47 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/09 02:46:58 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/09 07:17:38 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "Animal.hpp"
 
 Animal::Animal()
 	: type("Anonym")
 {
-	std::cout << type + " Constructor Called" << std::endl;
+	std::cout << "Animal Constructor Called" << std::endl;
 }
 
 Animal::Animal(std::string type_) 
 	: type(type_)
 {
-	std::cout << type + " ParamConstructor Called" << std::endl;
+	std::cout << "Animal ParamConstructor Called" << std::endl;
 }
 
 Animal::Animal( const Animal& other )
@@ -31,7 +30,7 @@ Animal::Animal( const Animal& other )
 	{
 		this->type = other.type;
 	}
-	std::cout << type + " CopyConstructor Called" << std::endl;
+	std::cout << "Animal CopyConstructor Called" << std::endl;
 }
 
 Animal& Animal::operator=( const Animal& other )
@@ -45,7 +44,7 @@ Animal& Animal::operator=( const Animal& other )
 
 void Animal::makeSound() const
 {
-	std::cout << "the " + type + " ???"<< std::endl;
+	std::cout << "the Animal Sounds ???"<< std::endl;
 }
 
 std::string Animal::getType() const
@@ -59,4 +58,6 @@ void Animal::setType(std::string typeToSet)
 }
 
 Animal::~Animal()
-{}
+{
+	std::cout << "the Animal Destructor "<< std::endl;
+}

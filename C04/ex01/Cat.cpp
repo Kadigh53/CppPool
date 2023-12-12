@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 15:30:08 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/09 03:46:58 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/09 07:18:39 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ Cat& Cat::operator=( const Cat& other )
 	if (this != &other)
 	{
 		Animal::operator=(other);
+		delete this->brain;
 		this->brain = new Brain();
 		std::string idea;
 		for (int i = 0;i < NBR_ofIDeas; i++)
@@ -66,15 +67,20 @@ Cat& Cat::operator=( const Cat& other )
 
 std::string Cat::getIdea(int idx)
 {
-	return (brain->getIdea(idx));
+	if (idx >=0 && idx < 101)
+		return (brain->getIdea(idx));
+	else 
+		return ("");
 }
 
 void Cat::setIdea(int idx, std::string idea)
 {
-	this->brain->setIdea(idx, idea);
+	if (idx >=0 && idx < 101)
+		this->brain->setIdea(idx, idea);
 }
 
 Cat::~Cat()
 {
 	delete brain;
+	std::cout << "Cat destructor Called" << std::endl;
 }

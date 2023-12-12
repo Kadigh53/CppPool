@@ -6,15 +6,15 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 21:29:55 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/08 00:32:11 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/12/11 05:58:24 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../include/AMateria.hpp"
-#include "../include/Character.hpp"
+# include "AMateria.hpp"
+#include "Character.hpp"
 
 AMateria::AMateria()
-	: type_("")
+	: type_("Undefined")
 {
 	if (SPEAKER)
 		std::cout << "default Constructor called" << std::endl;
@@ -46,7 +46,8 @@ AMateria& AMateria::operator=( const AMateria& other )
 }
 
 AMateria::~AMateria()
-{}
+{
+}
 
 std::string const & AMateria::getType() const
 {
