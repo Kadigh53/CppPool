@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/26 11:40:41 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/01/31 20:11:55 by aaoutem-         ###   ########.fr       */
+/*   Created: 2024/01/31 20:35:57 by aaoutem-          #+#    #+#             */
+/*   Updated: 2024/01/31 22:49:10 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
-
+#ifndef FORM_HPP
+#define FORM_HPP
 #include <iostream>
 #include <exception>
 
-class Bureaucrat
+class Form
 {
 private :
+	const std::string name;
+	bool signd;
+	const int grade;
 	class GradeTooHighException : public std::exception
 	{
 		const char* what() const _NOEXCEPT;
@@ -27,21 +29,13 @@ private :
 	{
 		const char* what() const _NOEXCEPT;
 	};
-	const std::string	name;
-	int			grade;
-
+	
 public :
-	Bureaucrat();
-	Bureaucrat(std::string name_, int grd);
-	Bureaucrat(const Bureaucrat& other);
+	Form();
+	Form(const Form& other);
+	Form& operator=(const Form& other);
 
-	Bureaucrat& operator=(const Bureaucrat& other);
-
-	std::string getName( void ) const;
-	int			getGrade( void ) const;
-
-	void GradeIncrement( int grd );
-	void GradeDecrement( int grd );
-	~Bureaucrat();
+	
+	~Form();
 };
 #endif
