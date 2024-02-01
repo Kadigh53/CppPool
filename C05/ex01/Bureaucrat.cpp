@@ -6,13 +6,12 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 11:40:34 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/01/31 20:27:58 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/02/01 21:01:26 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
-
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() : name("Anonym"), grade(150)
 {}
@@ -74,5 +73,19 @@ void Bureaucrat::GradeDecrement( int grd )
 	else
 		this->grade += grd;
 }
+void Bureaucrat::signForm( Form frm )
+{
+	try
+	{
+		frm.beSigned(*this);
+		std::cout << name << " signed " << frm.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << name << " couldn't sign " << frm.getName()
+				<< " because " << e.what() << std::endl;
+	}
+}
+
 Bureaucrat::~Bureaucrat()
 {}

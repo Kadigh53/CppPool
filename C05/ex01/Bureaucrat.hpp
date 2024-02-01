@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 11:40:41 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/01/31 20:11:55 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/02/01 20:52:40 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <exception>
+
+class Form;
 
 class Bureaucrat
 {
@@ -37,11 +39,13 @@ public :
 
 	Bureaucrat& operator=(const Bureaucrat& other);
 
-	std::string getName( void ) const;
+	std::string	getName( void ) const;
 	int			getGrade( void ) const;
 
 	void GradeIncrement( int grd );
 	void GradeDecrement( int grd );
+
+	void signForm( Form frm );
 	~Bureaucrat();
 };
 #endif

@@ -6,14 +6,13 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 20:35:57 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/01/31 22:49:10 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/02/01 21:21:22 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 #define FORM_HPP
-#include <iostream>
-#include <exception>
+#include "Bureaucrat.hpp"
 
 class Form
 {
@@ -29,13 +28,19 @@ private :
 	{
 		const char* what() const _NOEXCEPT;
 	};
-	
+
 public :
 	Form();
+	Form( std::string nm, int grd);
 	Form(const Form& other);
 	Form& operator=(const Form& other);
 
+	const std::string getName( void );
+	bool getSign( void );
+	int getGrade( void );
 	
+	void beSigned(Bureaucrat& Modir);
+
 	~Form();
 };
 #endif
