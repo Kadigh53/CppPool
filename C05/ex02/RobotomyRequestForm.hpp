@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 21:52:58 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/02/07 06:02:04 by aaoutem-         ###   ########.fr       */
+/*   Created: 2024/02/02 14:36:24 by aaoutem-          #+#    #+#             */
+/*   Updated: 2024/02/06 22:42:16 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// ShrubberyCreationForm: Required grades: sign 145, exec 137
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-#define SHRUBBERYCREATIONFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+#define ROBOTOMYREQUESTFORM_HPP
 
 #include "AForm.hpp"
 
-class ShrubberyCreationForm : public AForm
+class RobotomyRequestForm : public AForm
 {
 public :
-	ShrubberyCreationForm();
-	ShrubberyCreationForm(const ShrubberyCreationForm& other);
-	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
+	RobotomyRequestForm();
+	RobotomyRequestForm(const RobotomyRequestForm& other);
+	RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
 
-	void execute(Bureaucrat const & executor) const;
-
-	~ShrubberyCreationForm();
+	~RobotomyRequestForm();
 };
 
 #endif
