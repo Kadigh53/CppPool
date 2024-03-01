@@ -6,23 +6,30 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 22:42:30 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/02/01 21:21:35 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/01 15:52:41 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 Form::Form() :name("NoNamedForm"), signd(false), grade(100)
 {}
+
 Form::Form( std::string nm, int grd) :name(nm), signd(false), grade(grd)
-{}
+{
+	if (grd > 150 )
+		throw GradeTooLowException();
+	else if (grd < 1)
+		throw GradeTooHighException();
+}
+
 Form::Form( const Form& other ) :name(other.name), grade(other.grade)
 {
 	if (this != &other)
-	{
 		this->signd = other.signd;
-	}
 }
+
 Form& Form::operator=(const Form& other)
 {
 	if (this != &other)
@@ -54,12 +61,12 @@ int Form::getGrade( void )
 	return (this->grade);
 }
 
-void Form::beSigned( Bureaucrat& agent )
+void Form::beSigned( Bureaucrat& officer )
 {
-	if (agent.getGrade() <= this->grade)
+	if (officer.getGrade() <= this->grade)
 		this->signd = true;
 	else
-		throw GradeTooLowException();
+		throw Form::GradeTooLowException();
 }
 
 Form::~Form()

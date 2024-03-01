@@ -1,5 +1,6 @@
 *.txt
 a.*
-.vscode
+.vscode/
 ./.vscode
 .DS_Store
+./C05/kitchen.cpp

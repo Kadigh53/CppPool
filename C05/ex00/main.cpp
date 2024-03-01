@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 11:40:46 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/01/31 20:32:46 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/01 01:02:57 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,19 @@ int	main()
 		std::cout << e.what() << std::endl;
 	}
 
-	Bureaucrat b0("ali", 150);
-	Bureaucrat b1("ali1", 150);
-	b0.GradeIncrement(100);
-	std::cout << b0 << std::endl;
-	b0.GradeDecrement(10);
-	std::cout << b0 << std::endl;
 	try
 	{
+		Bureaucrat b0("ali", 150);
+		Bureaucrat b1("ali1", 150);
+		b0.GradeIncrement(100);
+		std::cout << b0 << std::endl;
+		b0.GradeDecrement(10);
+		std::cout << b0 << std::endl;
 		b0.GradeIncrement(1000);
+		std::cout << b0 << std::endl;
 	}
 	catch (const std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	std::cout << b0 << std::endl;
 }

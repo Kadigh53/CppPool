@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 14:36:24 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/02/06 22:42:16 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/02/08 10:13:03 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ public :
 	RobotomyRequestForm();
 	RobotomyRequestForm(const RobotomyRequestForm& other);
 	RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
+
+	void execute(Bureaucrat const & executor) const;
 
 	~RobotomyRequestForm();
 };
