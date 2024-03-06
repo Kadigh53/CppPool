@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 14:36:22 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/06 06:01:51 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/06 08:15:40 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm()
 	: AForm("ShrubberyCreationForm", 145, 137)
+{}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string trgt)
+	: AForm("ShrubberyCreationForm", 145, 137), target(trgt)
 {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)

@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 21:51:30 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/06 05:44:05 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/06 08:22:26 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ protected :
 	const int			RequiredSignPoints;
 	const int			RequiredExecPoints;
 	bool				signd;
+	std::string 		target;
 
 	class GradeTooHighException : public std::exception
 	{
@@ -39,6 +40,7 @@ protected :
 
 public :
 	AForm();
+	AForm(std::string trgt);
 	AForm(std::string nm_, int toSign, int toExec);
 	AForm(const AForm& other);
 	AForm& operator=(const AForm& other);

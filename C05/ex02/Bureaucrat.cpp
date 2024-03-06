@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 21:52:38 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/06 05:57:55 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/06 08:04:24 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void Bureaucrat::signForm( AForm *form )
 }
 void Bureaucrat::executeForm(AForm const & form)
 {
-	try 
+	try
     {
         form.execute(*this);
         std::cout << this->getName() << " execute " << form.GetName() << std::endl;
