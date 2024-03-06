@@ -6,25 +6,28 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 22:42:30 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/01 15:52:41 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/04 23:31:49 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form() :name("NoNamedForm"), signd(false), grade(100)
+Form::Form()
+	:name("NoNamedForm"), signd(false), RequiredSignGrade(150), RequiredExecGrade(150)
 {}
 
-Form::Form( std::string nm, int grd) :name(nm), signd(false), grade(grd)
+Form::Form( std::string nm, int signGrd, int execGrd)
+	:name(nm), signd(false), RequiredSignGrade(signGrd), RequiredExecGrade(execGrd)
 {
-	if (grd > 150 )
+	if (signGrd > 150 )
 		throw GradeTooLowException();
-	else if (grd < 1)
+	else if (signGrd < 1)
 		throw GradeTooHighException();
 }
 
-Form::Form( const Form& other ) :name(other.name), grade(other.grade)
+Form::Form( const Form& other )
+	:name(other.name), RequiredSignGrade(other.RequiredSignGrade), RequiredExecGrade(other.RequiredExecGrade)
 {
 	if (this != &other)
 		this->signd = other.signd;
@@ -52,18 +55,22 @@ const std::string Form::getName( void )
 {
 	return (this->name);
 }
-bool	Form::getSign( void )
+bool	Form::getSignature( void )
 {
 	return (this->signd);
 }
-int Form::getGrade( void )
+int Form::getSingGrade( void )
 {
-	return (this->grade);
+	return (this->RequiredSignGrade);
+}
+int Form::getExecGrade( void )
+{
+	return (this->RequiredExecGrade);
 }
 
 void Form::beSigned( Bureaucrat& officer )
 {
-	if (officer.getGrade() <= this->grade)
+	if (officer.getGrade() <= this->RequiredSignGrade)
 		this->signd = true;
 	else
 		throw Form::GradeTooLowException();

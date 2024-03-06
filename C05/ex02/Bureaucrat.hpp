@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 21:52:34 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/02/08 10:25:06 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/06 05:52:12 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <exception>
 #include <unistd.h>
+
 class AForm;
 
 class Bureaucrat
@@ -46,7 +47,9 @@ public :
 	void GradeIncrement( int grd );
 	void GradeDecrement( int grd );
 
-	void executeForm(AForm const & form);
+	void signForm( AForm *form );
+	void executeForm(AForm const &form);
+
 	~Bureaucrat();
 };
 

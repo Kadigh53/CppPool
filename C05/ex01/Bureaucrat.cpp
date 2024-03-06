@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 11:40:34 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/01 15:47:32 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/05 00:16:52 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void Bureaucrat::GradeIncrement( int grd )
 }
 void Bureaucrat::GradeDecrement( int grd )
 {
-
 	if ((this->grade + grd ) > 150)
 		throw GradeTooLowException();
 	else

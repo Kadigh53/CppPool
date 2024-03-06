@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 11:40:41 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/02/01 20:52:40 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/05 00:16:33 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ private :
 		const char* what() const _NOEXCEPT;
 	};
 	const std::string	name;
-	int			grade;
+	int					grade;
 
 public :
 	Bureaucrat();
@@ -46,6 +46,7 @@ public :
 	void GradeDecrement( int grd );
 
 	void signForm( Form frm );
+
 	~Bureaucrat();
 };
 #endif
