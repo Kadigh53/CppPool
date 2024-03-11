@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   B.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 22:15:09 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/11 06:07:18 by aaoutem-         ###   ########.fr       */
+/*   Created: 2024/03/10 09:18:21 by aaoutem-          #+#    #+#             */
+/*   Updated: 2024/03/10 09:18:22 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_HPP
-#define SCALARCONVERTER_HPP
+#ifndef B_HPP
+#define B_HPP
 
-#include <iostream>
-#include <stdlib.h>
-#include <math.h>
-#include <iomanip>
+#include "Base.hpp"
 
-class ScalarConverter
+class B : public Base
 {
 private :
 public :
-	ScalarConverter();
-	// ScalarConverter(const ScalarConverter& other);
-	// ScalarConverter& operator=(const ScalarConverter& other);
-
-	static void convert(std::string var);
-
-	~ScalarConverter();
+	B();
+	B(const B& other);
+	B& operator=(const B& other);
+	~B();
 };
 
 #endif

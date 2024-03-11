@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 22:15:09 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/11 06:07:18 by aaoutem-         ###   ########.fr       */
+/*   Created: 2024/03/10 09:05:03 by aaoutem-          #+#    #+#             */
+/*   Updated: 2024/03/10 09:14:35 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_HPP
-#define SCALARCONVERTER_HPP
+#include "Serializer.hpp"
 
-#include <iostream>
-#include <stdlib.h>
-#include <math.h>
-#include <iomanip>
+Serialize::Serialize()
+{}
 
-class ScalarConverter
-{
-private :
-public :
-	ScalarConverter();
-	// ScalarConverter(const ScalarConverter& other);
-	// ScalarConverter& operator=(const ScalarConverter& other);
+Serialize::Serialize(const Serialize& other)
+{}
+uintptr_t Serialize::serialize(Data* ptr)
+{}
+Data* Serialize::deserialize(uintptr_t raw)
+{}
+Serialize& Serialize::operator=(const Serialize& other)
+{}
 
-	static void convert(std::string var);
-
-	~ScalarConverter();
-};
-
-#endif
+Serialize::~Serialize(){}
