@@ -16,13 +16,6 @@ import sys
 
 def main(dir):
     for root, dirs, files in os.walk('./' + dir):
-        # Access and process the content
-        # print(f"Directory: {root}")
-        # print("Subdirectories:")
-        # for dir_name in dirs:
-        #     print(dir_name)
-            # print(os.path.join(root, dir_name))
-        # print("Files:")
         for file_name in files:
             if (file_name.endswith('.hpp')):
                 var = file_name[:-4]
@@ -39,19 +32,7 @@ def main(dir):
                     f.write('};\n\n')
                     f.write('#endif\n')
                 print(file_name)
-            # print(os.path.join(root, file_name))
-        print()
-    # # Walk through the directory tree
-    # for root, dirs in os.walk('./' + dir):
-    #     print("Directory: {}")
-    #     # print("Subdirectories:")
-    #     for dir_name in dirs:
-    #         print(os.path.join(root, dir_name))
-    #     # print("Files:")
-    #     # for file_name in files:
-    #     #     print(os.path.join(root, file_name))
-    #     # print(root)
 
-
-# main('a')
-# main('ex03')
+main('./C07/ex00')
+main('./C07/ex01')
+main('./C07/ex02')

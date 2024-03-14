@@ -6,7 +6,7 @@
 #    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/13 08:31:04 by aaoutem-          #+#    #+#              #
-#    Updated: 2024/03/13 08:34:45 by aaoutem-         ###   ########.fr        #
+#    Updated: 2024/03/14 06:46:35 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC = A.cpp B.cpp Base.cpp C.cpp main.cpp
 HDR = A.hpp B.hpp Base.hpp C.hpp
 
 build : $(SRC) $(HDR)
-	$(compile) $(SRC) -o Serializer
+	$(compile) $(SRC) -o main
 
 clean : 
-	rm Serializer
+	rm main

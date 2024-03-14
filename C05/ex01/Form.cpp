@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 22:42:30 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/04 23:31:49 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/07 07:50:09 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,17 @@
 #include "Bureaucrat.hpp"
 
 Form::Form()
-	:name("NoNamedForm"), signd(false), RequiredSignGrade(150), RequiredExecGrade(150)
+	:name("NoNamedForm"),
+	RequiredSignGrade(150),
+	RequiredExecGrade(150),
+	signd(false)
 {}
 
 Form::Form( std::string nm, int signGrd, int execGrd)
-	:name(nm), signd(false), RequiredSignGrade(signGrd), RequiredExecGrade(execGrd)
+	:name(nm),
+	RequiredSignGrade(signGrd),
+	RequiredExecGrade(execGrd),
+	signd(false)
 {
 	if (signGrd > 150 )
 		throw GradeTooLowException();
@@ -27,7 +33,9 @@ Form::Form( std::string nm, int signGrd, int execGrd)
 }
 
 Form::Form( const Form& other )
-	:name(other.name), RequiredSignGrade(other.RequiredSignGrade), RequiredExecGrade(other.RequiredExecGrade)
+	:name(other.name),
+	RequiredSignGrade(other.RequiredSignGrade),
+	RequiredExecGrade(other.RequiredExecGrade)
 {
 	if (this != &other)
 		this->signd = other.signd;

@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 22:16:07 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/11 23:13:51 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/12 00:09:12 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ void ScalarConverter::convert(std::string Input)
 	char *str = (char *)Input.c_str();
 	char *endptr;
 	long double Nbr = strtold(str, &endptr);
-	if (endptr == str)
+	if (!Nbr && (endptr == str))
 	{
 		std::cout << "char : Impossible\n";
 		std::cout << "int : Impossible\n";

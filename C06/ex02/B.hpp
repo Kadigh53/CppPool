@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 09:18:21 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/10 09:18:22 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/14 06:45:09 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class B : public Base
 private :
 public :
 	B();
-	B(const B& other);
-	B& operator=(const B& other);
+	// B(const B& other);
+	// B& operator=(const B& other);
 	~B();
 };
 

@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 21:52:38 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/06 08:04:24 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/07 02:39:03 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,13 @@ Bureaucrat::Bureaucrat()
 {}
 Bureaucrat::Bureaucrat(std::string name_, int grd)
     : name(name_), grade(grd)
-{}
+{
+	if (grd > 150)
+		throw GradeTooLowException();
+	else if (grd < 1)
+		throw GradeTooHighException();
+
+}
 Bureaucrat::Bureaucrat(const Bureaucrat& other)
     : name(other.name), grade(other.grade)
 {}
@@ -68,11 +74,11 @@ void Bureaucrat::signForm( AForm *form )
     try
     {
         form->beSigned(*this);
-        std::cout << "form got Signed\n";
+        std::cout << form->GetName() + " got Signed\n";
     }
     catch (std::exception& e)
     {
-        std::cout << "the form couldnt be signed " << e.what() << std::endl;
+        std::cout << "the " + form->GetName() + " couldnt be signed, bcz " << e.what() << std::endl;
     }
 }
 void Bureaucrat::executeForm(AForm const & form)

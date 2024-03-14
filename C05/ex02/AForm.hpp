@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 21:51:30 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/06 08:22:26 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/07 00:50:01 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,12 @@ protected :
 
 public :
 	AForm();
-	AForm(std::string trgt);
-	AForm(std::string nm_, int toSign, int toExec);
+	AForm(std::string nm_, int toSign, int toExec, std::string trgt);
 	AForm(const AForm& other);
 	AForm& operator=(const AForm& other);
 
 	std::string	GetName( void ) const;
+	std::string	GetTarget( void ) const;
 	int			GetRequiredSignPoints( void ) const;
 	int			GetRequiredExecPoints( void ) const;
 	bool		GetSignature() const;
@@ -55,7 +55,7 @@ public :
 	void beSigned(Bureaucrat& Modir);
 
 	void	CheckRequirements(Bureaucrat const & executor) const;
-	~AForm();
+	virtual ~AForm();
 };
 
 #endif

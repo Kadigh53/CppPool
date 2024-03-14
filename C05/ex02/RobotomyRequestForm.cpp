@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 21:52:56 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/06 07:55:53 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/07 07:52:19 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,33 @@
 #include "Bureaucrat.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm() 
-	:AForm("RobotomyRequestForm", 72, 45)
+	:AForm("RobotomyRequestForm", 72, 45, "NoNameTarget")
+{}
+RobotomyRequestForm::RobotomyRequestForm(std::string trgt)
+	:AForm("RobotomyRequestForm", 72, 45, trgt)
 {}
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other)
-	: AForm(other.GetName(), other.GetRequiredSignPoints() ,other.GetRequiredExecPoints())
+	: AForm(other)
 {}
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& other)
-{}
+{
+	AForm::operator=(other);
+	return (*this);
+}
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
 	CheckRequirements(executor);
 
-	int randomNbr = std::rand() % 2;
-	std::cout << "drilling noises ...\n" << "drilling noises ...\n";
+	std::time_t currentTime = std::time(0);
+
+	int randomNbr = currentTime % 2;
+	std::cout << "drilling noises ...\n";
 
 	if(randomNbr)
-		std::cout << executor.getName() << " has been robotomized successfully.\n";
+		std::cout << this->target << " has been robotomized successfully.\n";
 	else
-		std::cout << executor.getName() << " robotomization failed.\n";
+		std::cout << this->target << " robotomization failed.\n";
 }
 RobotomyRequestForm::~RobotomyRequestForm()
 {}
