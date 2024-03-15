@@ -33,6 +33,4 @@ def main(dir):
                     f.write('#endif\n')
                 print(file_name)
 
-main('./C07/ex00')
-main('./C07/ex01')
-main('./C07/ex02')
+ls

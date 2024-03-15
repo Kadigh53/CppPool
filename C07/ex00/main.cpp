@@ -6,11 +6,11 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 21:36:04 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/14 21:53:07 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/14 23:16:06 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "whatever.hpp"
+#include "Whatever.hpp"
 
 int main( void ) {
 	int a = 2;
