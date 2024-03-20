@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 06:37:09 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/17 06:37:11 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/18 22:26:08 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 class NotFound : public std::exception
 {
+public :
     const char * what() const _NOEXCEPT
     {
         return ("Number Not found in the Container.");

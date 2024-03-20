@@ -32,3 +32,5 @@ def main(dir):
                     f.write('};\n\n')
                     f.write('#endif\n')
                 print(file_name)
+
+main('C09/ex00')

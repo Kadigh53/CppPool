@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 06:43:27 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/18 01:48:35 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/19 07:42:24 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@
 #include <vector>
 
 typedef	std::vector<int>	IntVect;
+typedef std::vector<int>::iterator VectIt;
 
 class Span
 {
 private :
-	IntVect			span;
 	unsigned int	N;
+	int shortestspan;
 public :
+	IntVect			span;
 	class FullContainer : public std::exception 
 	{
 	public :
@@ -35,10 +37,11 @@ public :
 	};
 	Span();
 	Span(int maxNbrs);
-	Span(const Span& other);
-	Span& operator=(const Span& other);
+	// Span(const Span& other);
+	// Span& operator=(const Span& other);
 
 	void    addNumber( int nbr );
+	void	fillSpan(VectIt eb, VectIt ee);
 
 	int	shortestSpan();
 	int	longestSpan();
