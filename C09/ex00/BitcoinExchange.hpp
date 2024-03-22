@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 08:09:23 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/21 12:55:14 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/22 11:28:15 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@
 #include <fstream>
 #include <map>
 
-typedef std::map<std::string, double> DataBase;
+typedef std::map<std::string, double> DBmap;
+typedef std::map<std::string, double>::iterator DBiterator;
 
 class BitcoinExchange
 {
 private :
-	DataBase	Db;
+	DBmap	Db;
 
 public :
 
@@ -30,9 +31,12 @@ public :
 	BitcoinExchange(const BitcoinExchange& other);
 	BitcoinExchange& operator=(const BitcoinExchange& other);
 
-	DataBase& getDb( void );
+	DBmap& getDb( void );
+	void fillDb(std::string line);//, std::ofstream& output);
 
-	// void UserWalletEvolution( std::string line );
+	void UserWalletEvolution( std::string line );
+	void performCalcul(std::string date, std::string amount);
+
 
 	~BitcoinExchange();
 };

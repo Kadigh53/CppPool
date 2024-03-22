@@ -6,11 +6,11 @@
 #    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/21 08:10:10 by aaoutem-          #+#    #+#              #
-#    Updated: 2024/03/21 08:32:14 by aaoutem-         ###   ########.fr        #
+#    Updated: 2024/03/22 07:18:18 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-Compile = c++ -Wall -Wextra -Werror -std=c++98
+Compile = c++ #-Wall -Wextra -Werror -std=c++98
 
 NAME = btc
 SRC = main.cpp BitcoinExchange.cpp
