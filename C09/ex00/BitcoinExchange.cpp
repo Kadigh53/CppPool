@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 08:18:40 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/22 11:28:24 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/23 03:19:59 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ BitcoinExchange::BitcoinExchange()
         char line[256];
         ifs.getline(line, 256);
         fillDb(line);
-    }   
+    }
+    ifs.close();
 } 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange& other)
 {}
@@ -37,8 +38,7 @@ void BitcoinExchange::fillDb(std::string line)//, std::ofstream& output)
     std::string ExchangPrice = line.substr(pos + 1, line.length() - pos);
     if(!atoi(date.substr(0, 4).c_str()))
         return;
-    // output.precision(15);
-    // output << "[" << date << "] " << " [" << stod(ExchangPrice) << "]\n";
+
     this->Db.insert(std::pair<std::string, double>(date, stod(ExchangPrice)));
 }
 

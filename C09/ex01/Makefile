@@ -5,16 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/21 08:10:10 by aaoutem-          #+#    #+#              #
-#    Updated: 2024/03/23 06:37:37 by aaoutem-         ###   ########.fr        #
+#    Created: 2024/03/23 06:36:38 by aaoutem-          #+#    #+#              #
+#    Updated: 2024/03/23 06:38:27 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+
 Compile = c++ -Wall -Wextra -Werror -std=c++98
 
-NAME = btc
-SRC = main.cpp BitcoinExchange.cpp
-HDR = BitcoinExchange.hpp
+NAME = RPN
+SRC = main.cpp RPN.cpp
+HDR = RPN.hpp
 
 OBJS = $(SRC:.cpp=.o)
 

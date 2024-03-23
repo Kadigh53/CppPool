@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 08:21:17 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/22 11:48:26 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/23 03:32:33 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void print(std::string error_Msg)
 {
 	std::cerr << error_Msg << std::endl;
+	
 }
 
 std::string strtrim( std::string str )
@@ -67,20 +68,12 @@ bool	parse_date(std::string& date)
 	return true;
 }
 
-	/*If the date used in the input does not exist in your DB then you
-	must use the closest date contained in your DB. Be careful to use the
-	lower date and not the upper one.*/
-void nearestDate(std::string date, double BTCamount)
-{
-	
-}
-
 void	BitcoinExchange::performCalcul(std::string date, std::string amount)
 {
 	double BTCamount = std::stod(amount);
 	DBiterator it = this->Db.find(date);
 	if (it == this->Db.end())
-		nearestDate(date, BTCamount);
+		it = this->Db.lower_bound(date);
 
 	std::cout.precision(15);
 	std::cout << it->first << " => " 
@@ -104,10 +97,7 @@ void BitcoinExchange::UserWalletEvolution( std::string line )
 int main(int ac, char *av[])
 {
 	if (ac != 2)
-	{
-		std::cout << "not enough parametres\n";
-		return 0;
-	}
+		return (print("Error: not enough parametres"), 0);
 
 	BitcoinExchange	exc;
 	std::ifstream	ifs;
@@ -115,26 +105,21 @@ int main(int ac, char *av[])
 
 	ifs.open(av[1]);
 	if (!ifs.is_open())
-	{
-		std::cout << " input file fails at opening \n";
-		return 0;
-	}
+		return (print("Error: bad input file"), 0);
+
 	ifs.getline(line, sizeof(line));
-	if (std::string(line).find("date") == std::string::npos)
-	{
-		std::cerr << "bad input file\n";
-		return 0;
-	}
+	if (std::string(line).find("date") == std::string::npos
+		|| std::string(line).find("|") == std::string::npos
+		|| std::string(line).find("value") == std::string::npos)
+		return (print("Error: bad input file"), 0);
 
 	while (!ifs.eof())
 	{
 		ifs.getline(line, sizeof(line));
-		// if (ifs.eof())
-		// 	break;
-		// exc.UserWalletEvolution(line);
-		// std::cout << line << std::endl;
 		exc.UserWalletEvolution(line);
 	}
+	ifs.close();
+	return 0;
 }
 
 
