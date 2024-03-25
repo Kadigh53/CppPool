@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 07:10:32 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/25 21:45:45 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/25 22:02:12 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <stdlib.h>
 
 typedef std::vector<int> Vect;
 
@@ -32,7 +33,7 @@ public :
 	Vect& getVect();
 
 	void mergerSortAlgo();
-	void Bs_and_insertion();
+	void Bs_and_insertion(int x);
 
 	~PmergeMe();
 };

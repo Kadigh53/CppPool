@@ -6,15 +6,27 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 07:46:22 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/25 21:49:53 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/25 22:15:43 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-void PmergeMe::Bs_and_insertion()
+void PmergeMe::Bs_and_insertion(int x)
 {
-	
+	int i = 0;
+	int j = container.size() - 1;
+	int m = 0;
+
+	while (i <= j)
+	{
+		m = (i + j) / 2;
+		if (container[m] < x)
+			i = m + 1;
+		else
+			j = m - 1;
+	}
+	container.insert(container.begin() + i, x);
 }
 
 void PmergeMe::mergerSortAlgo()
@@ -48,9 +60,17 @@ void PmergeMe::mergerSortAlgo()
 	container.push_back(pairs[0].second);
 	for (int i = 0; i < pairs.size(); i++)
 		container.push_back(pairs[i].first);
-	
+	pairs.erase(pairs.begin());
 
-	Bs_and_insertion();	
+	for (size_t i = 0; i < pairs.size(); i++)
+		Bs_and_insertion(pairs[i].second);
+	if (k > 0)
+		Bs_and_insertion(k);
+
+	for (size_t i = 0; i < container.size(); i++)
+	{
+		std::cout << container[i] << ",";//std::endl;
+	}
 }
 
 int main(int ac , char **av)
