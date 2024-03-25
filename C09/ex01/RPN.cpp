@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 12:47:17 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/23 16:15:05 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/23 16:35:43 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,40 @@ RPN::RPN()
 // {}
 // RPN& RPN::operator=(const RPN& other)
 // {}
+
+void  RPN::parseInput(std::string expression)
+{
+		size_t pos = expression.find_first_not_of("0123456789+-*/ ");
+	if (pos != std::string::npos)
+		throw Error();
+
+	//erase spaces from the string
+	for (size_t i = 0; i < expression.length(); i++)
+	{
+		if (expression[i] == ' ')
+			expression.erase(i, 1);
+	}
+	if (expression.length() < 3 || !isdigit(expression[0]) || !isdigit(expression[1]))
+		throw Error();
+
+	int k = 0;
+	// check if input expressioning is a correct RPN expression
+	for (size_t i = 0; i < expression.length(); i++)
+	{
+		if (k == ' ')
+			continue;
+		else if (isdigit(expression[i]))
+			k++;
+		else if (expression[i] == '+' || expression[i] == '-' || expression[i] == '*' || expression[i] == '/')
+			k--;
+		else if (k < 1)
+			throw Error();
+		else
+			throw Error();
+	}
+	if (k != 1)
+		throw Error();
+}
 
 void RPN::operation( char op)
 {
@@ -37,19 +71,20 @@ void RPN::operation( char op)
 	
 }
 
-void    RPN::PerforformCalcul(std::string str)
+void    RPN::PerforformCalcul(std::string expression)
 {
-	for (size_t i = 0; i < str.length(); i++)
+	parseInput(expression);
+	for (size_t i = 0; i < expression.length(); i++)
 	{
-		if(isdigit(str[i]))
-			this->stck.push(str[i] - '0');
-		else if (str[i] == '+')
+		if(isdigit(expression[i]))
+			this->stck.push(expression[i] - '0');
+		else if (expression[i] == '+')
 			operation('+');
-		else if (str[i] == '-')
+		else if (expression[i] == '-')
 			operation('-');
-		else if (str[i] == '*')
+		else if (expression[i] == '*')
 			operation('*');
-		else if (str[i] == '/')
+		else if (expression[i] == '/')
 			operation('/');
 	}
 	int result = stck.top();

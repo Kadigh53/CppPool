@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 12:46:49 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/23 16:14:20 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/23 16:35:55 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,20 @@ class RPN
 private :
 	std::stack<int> stck;
 public :
+	class Error : public std::exception
+	{
+		const char* what() const _NOEXCEPT
+		{
+			return "Error";
+		}
+	};
 	RPN();
 	// RPN(const RPN& other);
 	// RPN& operator=(const RPN& other);
 
-	void PerforformCalcul(std::string str);
+	// void print(std::string str);
+	void parseInput(std::string expression);
+	void PerforformCalcul(std::string expression);
 	void operation( char op);
 
 	~RPN();
