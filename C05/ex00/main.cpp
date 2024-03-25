@@ -6,11 +6,12 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 11:40:46 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/07 07:45:18 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/25 22:38:44 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
 
 std::ostream& operator<<(std::ostream& out, Bureaucrat &b)
 {

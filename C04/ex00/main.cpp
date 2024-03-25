@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:06:48 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/12/11 16:25:37 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/25 22:38:34 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "Dog.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
+
 
 void	genericCode(const Animal *animal)
 {
