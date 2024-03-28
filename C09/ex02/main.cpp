@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 07:46:22 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/25 22:15:43 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/03/26 17:15:24 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void PmergeMe::Bs_and_insertion(int x)
 
 void PmergeMe::mergerSortAlgo()
 {
-
 	std::vector<std::pair<int, int> > pairs;
 
 	int k  = -1;
@@ -50,12 +49,6 @@ void PmergeMe::mergerSortAlgo()
 
 	std::sort(pairs.begin(), pairs.end());
 
-	// for (size_t i = 0; i < pairs.size(); i++)
-	// {
-	// 	std::cout << pairs[i].first << " " << pairs[i].second << std::endl;
-	// }
-	// std::cout << k << std::endl;
-
 	container.erase(container.begin(), container.end());
 	container.push_back(pairs[0].second);
 	for (int i = 0; i < pairs.size(); i++)
@@ -68,13 +61,13 @@ void PmergeMe::mergerSortAlgo()
 		Bs_and_insertion(k);
 
 	for (size_t i = 0; i < container.size(); i++)
-	{
 		std::cout << container[i] << ",";//std::endl;
-	}
+	
 }
 
 int main(int ac , char **av)
 {
+	// std::vector<int> vect;
 	PmergeMe pm;
 	pm.mergerSortAlgo();
 	// if (ac < 2)
