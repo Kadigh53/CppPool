@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 01:06:18 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/16 02:56:24 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/11/15 16:57:23 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <strings.h>
 #include <string.h>
 #include <exception>
-#
+
 
 template <typename T>
 class Array
@@ -29,7 +29,7 @@ public :
 	class OutOfange : public std::exception
 	{
 	public :
-		const char* what() const _NOEXCEPT
+		const char* what() const
 		{
 			return "index Out of Range";
 		}
@@ -139,6 +139,6 @@ int main(int, char**)
     {
         numbers[i] = rand();
     }
-    delete [] mirror;//
+    delete [] mirror;
     return 0;
 }
