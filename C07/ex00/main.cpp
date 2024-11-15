@@ -6,20 +6,22 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 21:36:04 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/25 22:39:05 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/11/15 16:33:27 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Whatever.hpp"
 
-
-int main( void ) {
+int main( void )
+{
 	int a = 2;
 	int b = 3;
+
 	::swap( a, b );
 	std::cout << "a = " << a << ", b = " << b << std::endl;
 	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
 	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+
 	std::string c = "chaine1";
 	std::string d = "chaine2";
 	::swap(c, d);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   Whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 20:57:20 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/14 21:56:17 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/11/15 16:32:17 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,31 @@
 
 #include <iostream>
 
-template <typename Type>
-void swap(Type& a, Type& b)
+template <typename T>
+void swap(T& a, T& b)
 {
-	Type tmp = a;
+	T tmp = a;
 	a = b;
 	b = tmp;
 }
 
-template <typename Type>
-Type    min(Type& a, Type& b)
+template <typename T>
+const T& min(const T& a, const T& b)
 {
-	if (a < b)
-		return (a);
-	return (b);
+	
+	// std::cout << std::endl;
+	// std::cout << a<< std::endl;
+	// std::cout << b<< std::endl;
+	return (a<b?a:b);
 }
-template <typename Type>
-Type    max(Type& a, Type& b)
+
+template <typename T>
+const T& max(const T& a, const T& b)
 {
-	if (a < b)
-		return (a);
-	return (b);
+	// std::cout << std::endl;
+	// std::cout << a<< std::endl;
+	// std::cout << b<< std::endl;
+	return (a<=b?b:a);
 }
 
 #endif
