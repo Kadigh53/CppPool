@@ -6,93 +6,25 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 01:06:18 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/11/15 16:57:23 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/11/16 10:59:02 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "Array.hpp"
+#include "Array.hpp"
 
-#include <iostream>
-#include <strings.h>
-#include <string.h>
-#include <exception>
-
-
-template <typename T>
-class Array
+#define MAX_VAL 69
+void a()
 {
-private :
-    T *ArrayContainer;
-	size_t len;
-public :
-
-	class OutOfange : public std::exception
-	{
-	public :
-		const char* what() const
-		{
-			return "index Out of Range";
-		}
-	};
-	Array() : len(0)
-    {
-		ArrayContainer = 0;
-	}
-	Array(int n) : len(n)
-	{
-		ArrayContainer = new T[n];
-		bzero(ArrayContainer, len * sizeof(T));
-	}
-	Array(const Array& other)
-	{
-		if (this != &other)
-		{
-			this->ArrayContainer = new T[other.getlen()];
-			void	*tmp = other.getArray();
-			memcpy(this->ArrayContainer, tmp, sizeof(tmp));
-			this->len = other.getlen();
-		}
-	}
-	Array& operator=(const Array& other)
-	{
-		if (this != &other)
-		{
-			delete [] this->Array;
-			this->ArrayContainer = new T[other.getlen()];
-			void	*tmp = other.getArray();
-			memccpy(this->ArrayContainer, tmp, sizeof(tmp));
-			this->len = other.getlen();
-		}
-	}
-	T& operator[](size_t idx)
-	{
-		if (idx < 0 || idx >= len)
-			throw OutOfange();
-		return (ArrayContainer[idx]);
-	}
-
-	size_t getlen( void ) const
-	{
-		return (len);
-	}
-
-	T* getArray( void ) const
-	{
-		return (ArrayContainer);
-	}
-
-	~Array()
-    {
-		delete [] ArrayContainer;
-	}
-};
-
-#define MAX_VAL 750
+	system("leaks main");
+}
 int main(int, char**)
 {
-    Array<int> numbers(MAX_VAL);
+	atexit(a);
+    Array<int>numbers(MAX_VAL);
+
     int* mirror = new int[MAX_VAL];
     srand(time(NULL));
+
     for (int i = 0; i < MAX_VAL; i++)
     {
         const int value = i;
@@ -104,7 +36,6 @@ int main(int, char**)
 		std::cout << numbers[i] << " ";
 	}
 	std::cout << std::endl;
-    // //SCOPE
     {
         Array<int> tmp = numbers;
         Array<int> test(tmp);
