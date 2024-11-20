@@ -6,7 +6,7 @@
 #    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/24 07:41:21 by aaoutem-          #+#    #+#              #
-#    Updated: 2024/03/24 07:41:52 by aaoutem-         ###   ########.fr        #
+#    Updated: 2024/11/19 18:06:20 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@
 Compile = c++ -Wall -Wextra -Werror -std=c++98
 
 NAME = PmergeMe
-SRC = main.cpp RPN.cpp
-HDR = RPN.hpp
+SRC = main.cpp PmergeMe.cpp
+HDR = PmergeMe.hpp
 
 OBJS = $(SRC:.cpp=.o)
 

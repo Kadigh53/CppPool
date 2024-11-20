@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 12:47:17 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/23 16:35:43 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/11/19 16:30:52 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,43 @@
 
 RPN::RPN()
 {}
-// RPN::RPN(const RPN& other)
-// {}
-// RPN& RPN::operator=(const RPN& other)
-// {}
+RPN::RPN(const RPN& other)
+{
+	if (this != &other)
+	{
+		this->stck = other.stck;
+	}
+}
+RPN& RPN::operator=(const RPN& other)
+{
+	if (this != &other)
+	{
+		this->stck = other.stck;
+	}
+	return *this;
+}
 
 void  RPN::parseInput(std::string expression)
 {
-		size_t pos = expression.find_first_not_of("0123456789+-*/ ");
+	size_t pos = expression.find_first_not_of("0123456789+-*/ ");
 	if (pos != std::string::npos)
 		throw Error();
 
-	//erase spaces from the string
 	for (size_t i = 0; i < expression.length(); i++)
 	{
 		if (expression[i] == ' ')
+		{
 			expression.erase(i, 1);
+			i--;
+		}
 	}
 	if (expression.length() < 3 || !isdigit(expression[0]) || !isdigit(expression[1]))
 		throw Error();
 
 	int k = 0;
-	// check if input expressioning is a correct RPN expression
 	for (size_t i = 0; i < expression.length(); i++)
 	{
-		if (k == ' ')
-			continue;
-		else if (isdigit(expression[i]))
+		if (isdigit(expression[i]))
 			k++;
 		else if (expression[i] == '+' || expression[i] == '-' || expression[i] == '*' || expression[i] == '/')
 			k--;
@@ -68,7 +78,6 @@ void RPN::operation( char op)
 		stck.push(a * b);
 	else if (op == '/')
 		stck.push(a / b);
-	
 }
 
 void    RPN::PerforformCalcul(std::string expression)

@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 07:10:32 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/25 22:02:12 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/11/20 12:20:41 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,37 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <deque>
+#include <set>
 #include <stdlib.h>
 
 typedef std::vector<int> Vect;
+typedef std::vector<int>::iterator VectIt;
+typedef std::deque<int> dq;
+typedef std::deque<int>::iterator dqIt;
 
 class PmergeMe
 {
 private :
-	Vect	container;
+	Vect	vectCont;
+	dq		DqCont;
 public :
 	PmergeMe();
 	PmergeMe(const PmergeMe& other);
 	PmergeMe& operator=(const PmergeMe& other);
 
-	Vect& getVect();
+	Vect& getVect( void );
+	dq& getDq( void );
 
-	void mergerSortAlgo();
-	void Bs_and_insertion(int x);
+	void parseInput(int argc, char* argv[]);
+	void VectMergerSortAlgo();
+	void DqMergerSortAlgo();
+
+	void VectBsinsertion(int x);
+	void DqBsinsertion(int x);
 
 	~PmergeMe();
 };
+
 
 #endif

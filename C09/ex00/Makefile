@@ -6,7 +6,7 @@
 #    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/21 08:10:10 by aaoutem-          #+#    #+#              #
-#    Updated: 2024/03/23 06:37:37 by aaoutem-         ###   ########.fr        #
+#    Updated: 2024/11/20 17:38:33 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,9 @@ $(NAME) : $(OBJS) $(HDR)
 	$(Compile) -c $< -o $@
 
 clean : 
-	rm $(OBJS)
+	rm -f $(OBJS)
 
 fclean : clean 
-	rm $(NAME)
+	rm -f $(NAME) 
+
+re : fclean all

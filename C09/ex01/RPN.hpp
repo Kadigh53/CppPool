@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 12:46:49 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/03/23 16:35:55 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/11/19 16:31:59 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,15 @@ private :
 public :
 	class Error : public std::exception
 	{
-		const char* what() const _NOEXCEPT
+		const char* what() const throw()
 		{
 			return "Error";
 		}
 	};
 	RPN();
-	// RPN(const RPN& other);
-	// RPN& operator=(const RPN& other);
+	RPN(const RPN& other);
+	RPN& operator=(const RPN& other);
 
-	// void print(std::string str);
 	void parseInput(std::string expression);
 	void PerforformCalcul(std::string expression);
 	void operation( char op);
