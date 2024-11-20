@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 07:46:22 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/11/20 12:24:11 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/11/20 18:15:48 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,17 @@
 
 int main(int ac , char **av)
 {
-	PmergeMe pm;
+	try
+	{
+		PmergeMe pm;
+
+		pm.parseInput(ac, av);
+		pm.VectMergerSortAlgo();
+		pm.DqMergerSortAlgo();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	
-	pm.parseInput(ac, av);
-	pm.VectMergerSortAlgo();
-	pm.DqMergerSortAlgo();
 }

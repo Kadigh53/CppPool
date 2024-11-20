@@ -6,7 +6,7 @@
 #    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/23 06:36:38 by aaoutem-          #+#    #+#              #
-#    Updated: 2024/03/23 06:38:27 by aaoutem-         ###   ########.fr        #
+#    Updated: 2024/11/20 17:44:16 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,3 +32,5 @@ clean :
 
 fclean : clean 
 	rm $(NAME)
+
+re : fclean all

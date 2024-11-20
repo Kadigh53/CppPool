@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 07:10:58 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/11/20 12:23:15 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/11/20 18:14:52 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,7 +146,7 @@ void PmergeMe::VectMergerSortAlgo()
 	ArrayElements("After: ", this->getVect());
 	clock_t endvect = clock();
 	double vectTime = static_cast<double>(endvect - startvect) / CLOCKS_PER_SEC * 1000000.0;
-	std::cout << "Time to process a range of " << vectCont.size() 
+	std::cout << "time to process a range of " << vectCont.size() 
                   << " elements with std::vector: " << vectTime << " us" << std::endl;
 }
 
@@ -185,7 +185,7 @@ void PmergeMe::DqMergerSortAlgo()
 
 	clock_t endDq = clock();
 	double dqTime = static_cast<double>(endDq - startDq) / CLOCKS_PER_SEC * 1000000.0;
-	std::cout << "Time to process a range of " << DqCont.size() 
+	std::cout << "time to process a range of " << DqCont.size() 
                   << " elements with std::deque: " << dqTime << " us" << std::endl;
     
 }

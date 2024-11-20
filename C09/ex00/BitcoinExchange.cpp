@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 08:18:40 by aaoutem-          #+#    #+#             */
-/*   Updated: 2024/11/19 21:35:49 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2024/11/20 17:45:34 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,6 @@ void	BitcoinExchange::performCalcul(std::string date, std::string amount)
 	if (it == this->Db.end())
 		it = this->Db.lower_bound(date);
 
-	// std::cout.precision(2);
 	std::cout << it->first << " => " 
 		<< BTCamount << " = " << BTCamount * it->second << std::endl;
 }
